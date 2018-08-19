@@ -10,10 +10,82 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_19_064027) do
+ActiveRecord::Schema.define(version: 2018_08_19_083932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "certificates", force: :cascade do |t|
+    t.string "name"
+    t.string "institution"
+    t.bigint "nutritionist_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["nutritionist_id"], name: "index_certificates_on_nutritionist_id"
+  end
+
+  create_table "doses", force: :cascade do |t|
+    t.integer "quantity"
+    t.bigint "ingredient_id"
+    t.bigint "meal_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ingredient_id"], name: "index_doses_on_ingredient_id"
+    t.index ["meal_id"], name: "index_doses_on_meal_id"
+  end
+
+  create_table "ingredients", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "meal_plans", force: :cascade do |t|
+    t.string "name"
+    t.integer "daily_calories"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_meal_plans_on_user_id"
+  end
+
+  create_table "meals", force: :cascade do |t|
+    t.string "name"
+    t.text "recipe"
+    t.string "type"
+    t.integer "calories"
+    t.bigint "nutritionist_id"
+    t.bigint "meal_plan_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["meal_plan_id"], name: "index_meals_on_meal_plan_id"
+    t.index ["nutritionist_id"], name: "index_meals_on_nutritionist_id"
+  end
+
+  create_table "nutritionists", force: :cascade do |t|
+    t.string "name"
+    t.string "bio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.string "body"
+    t.bigint "nutritionist_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["nutritionist_id"], name: "index_reviews_on_nutritionist_id"
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "nutritionist_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["nutritionist_id"], name: "index_subscriptions_on_nutritionist_id"
+    t.index ["user_id"], name: "index_subscriptions_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +99,13 @@ ActiveRecord::Schema.define(version: 2018_08_19_064027) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "certificates", "nutritionists"
+  add_foreign_key "doses", "ingredients"
+  add_foreign_key "doses", "meals"
+  add_foreign_key "meal_plans", "users"
+  add_foreign_key "meals", "meal_plans"
+  add_foreign_key "meals", "nutritionists"
+  add_foreign_key "reviews", "nutritionists"
+  add_foreign_key "subscriptions", "nutritionists"
+  add_foreign_key "subscriptions", "users"
 end

@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resources :nutritionists, only: [:index, :show] do
+    resources :meals, only: [:show]
+  end
+  resources :meals, only: [:index]
+  resources :subscriptions, only: [:new, :create]
+  resources :meal_plans, only: [:index, :new, :create, :show]
+
+  root to: 'nutritionists#index'
 end
+
+
+# "See more" link on meal_plans#create...
+# what should I redirect to?
+
+
+# indexing all meals
+# @nutritionists = current_user.nutritionists
+# 

@@ -1,5 +1,7 @@
 class Nutritionist < ApplicationRecord
-  has_many :meals
-  belongs_to :subscription
-  has_many :reviews
+  has_many :users, through: :subscriptions
+  has_many :meals, dependent: :destroy
+  has_many :reviews, dependent: :destroy
+  has_many :subscriptions, dependent: :destroy
+  has_many :certificates, dependent: :destroy
 end

@@ -24,20 +24,13 @@ ActiveRecord::Schema.define(version: 2018_08_19_083932) do
     t.index ["nutritionist_id"], name: "index_certificates_on_nutritionist_id"
   end
 
-  create_table "doses", force: :cascade do |t|
-    t.integer "quantity"
-    t.bigint "ingredient_id"
+  create_table "ingredients", force: :cascade do |t|
+    t.string "name"
+    t.string "dose"
     t.bigint "meal_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["ingredient_id"], name: "index_doses_on_ingredient_id"
-    t.index ["meal_id"], name: "index_doses_on_meal_id"
-  end
-
-  create_table "ingredients", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["meal_id"], name: "index_ingredients_on_meal_id"
   end
 
   create_table "meal_plans", force: :cascade do |t|
@@ -100,8 +93,7 @@ ActiveRecord::Schema.define(version: 2018_08_19_083932) do
   end
 
   add_foreign_key "certificates", "nutritionists"
-  add_foreign_key "doses", "ingredients"
-  add_foreign_key "doses", "meals"
+  add_foreign_key "ingredients", "meals"
   add_foreign_key "meal_plans", "users"
   add_foreign_key "meals", "meal_plans"
   add_foreign_key "meals", "nutritionists"

@@ -1,3 +1,3 @@
 class Review < ApplicationRecord
-  belongs_to :nutritionst
+  belongs_to :nutritionist
 end

@@ -21,9 +21,9 @@ bios = [
 ]
 
 puts "creating users..."
-User.create(email: "kojoaddaquay@gmail.com", password: "123456")
-User.create(email: "nordinbelkacemi@gmail.com", password: "123456")
 User.create(email: "celine.te.mcgill@gmail.com", password: "123456")
+User.create(email: "kojoaddaquay@gmail.com", password: "123456")
+User.create(email: "belkaceminordin@gmail.com", password: "123456")
 
 puts "creating nutritionists..."
 8.times do |i|

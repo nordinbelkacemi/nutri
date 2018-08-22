@@ -24,3 +24,10 @@ As a user, I can view a daily meal plan (meal_plans#show)
 As a user, I can add a review to a nutritionist's profile (review#new and review#create)
 As a user, I can edit a review (review#edit and review#update)
 As a user, I can delete a review (review#destroy)
+
+
+
+Celine' tasks of the day:
+
+As a user, I can see a nutritionist's profile (nutritionists#show)
+As a user, I can subscribe to a nutritionist (subscriptions#new and subscriptions#create)

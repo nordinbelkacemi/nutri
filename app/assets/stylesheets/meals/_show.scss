@@ -1,0 +1,30 @@
+
+.banner-show {
+  position: relative;
+  height: 60vh;
+  width: 100%;
+  color: white;
+}
+
+.avatar-show {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  top: 400px;
+  right: 100px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+.meal-container {
+  position: relative;
+  width: 100%;
+  margin-left: 5%;
+}
+
+.follow-button {
+  margin-top: 20px;
+  position: absolute;
+  top: 575px;
+  right: 140px;
+}

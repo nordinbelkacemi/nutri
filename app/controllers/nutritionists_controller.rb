@@ -1,8 +1,9 @@
 class NutritionistsController < ApplicationController
   before_action :set_nutritionist, only: [:show]
-  skip_before_action :authenticate_user!, only:[:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+    @nutritionists = Nutritionist.all
   end
 
   def show
@@ -24,7 +25,7 @@ class NutritionistsController < ApplicationController
 # private
 
 #   def nutritionist_params
-#     prms = params.require(:nutritionist).permit(:name, :bio, :created_at, :updated_at, :photo, :review, :certificate, :subscription)
+#     prms = params.require(:nutritionist).permit(:name, :bio, :created_at, :updated_at, :NUTRITIONISTS_PHOTOS, :review, :certificate, :subscription)
 #     prms[:user_id] = current_user.id
 #     prms[:created_at] = DateTime.now
 #     return prms

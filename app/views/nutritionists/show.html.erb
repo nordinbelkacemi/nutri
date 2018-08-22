@@ -7,7 +7,7 @@
   <% end %>
   <div class="col-xs-12 col-md-6">
     <h1 id="title-yo"><%= @nutritionist.name %></h1>
-    <%= cl_image_tag(@nutritionist.photo, width: 1000, height: 1000, crop: :thumb, gravity: :face, class: "profile-avatar") %>
+    <%= cl_image_tag(@nutritionist.nutritionists_photos, width: 1000, height: 1000, crop: :thumb, gravity: :face, class: "profile-avatar") %>
     <h4>Bio</h4>
     <%= @nutritionist.bio %>
   </div>
@@ -19,7 +19,7 @@
       </div>
       <ul>
         <% @nutritionist_nutritionists.each do |nutritionist| %>
-        <div class="card margin-top-50" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=nutritionist.photo %>')">
+        <div class="card margin-top-50" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=nutritionist.nutritionists_photos %>')">
           <h2 class="profile-headers card-description"><%= link_to "#{nutritionist.title}", nutritionist_path(nutritionist), class: "profile-headers" %></h2>
 
           <div class="rating-stars rating-stars-profile">

@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :meal_plans, dependent: :destroy
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  mount_uploader :photo, PhotoUploader
 end

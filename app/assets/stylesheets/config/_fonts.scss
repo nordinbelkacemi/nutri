@@ -1,16 +1,40 @@
 // Import Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
 
 // Define fonts for body and headers
-$body-font: "Open Sans", "Helvetica", "sans-serif";
-$headers-font: "Raleway", "Helvetica", "sans-serif";
+$light-font: "interUI-light";
+$medium-font: "interUI-medium";
+$bold-font: "interUI-bold";
+// $thicc-font: "interUI-thicc";
 
 // To use a font file (.woff) uncomment following lines
+@font-face {
+  font-family: "interUI-light";
+  // src: font-url('Inter-UI-Regular.eot');
+  // src: font-url('Inter-UI-Regular.eot?#iefix') format('embedded-opentype'),
+       src: asset-url('Inter-UI-Regular.woff') format('woff')
+       // font-url('Inter-UI-Regular.ttf') format('truetype')
+}
+
+@font-face {
+  font-family: "interUI-medium";
+  // src: font-url('Inter-UI-Medium.eot');
+  // src: font-url('Inter-UI-Medium.eot?#iefix') format('embedded-opentype'),
+       src: asset-url('Inter-UI-Medium.woff') format('woff')
+       // font-url('Inter-UI-Medium.ttf') format('truetype')
+}
+
+@font-face {
+  font-family: "interUI-bold";
+  // src: font-url('Inter-UI-Bold.eot');
+  // src: font-url('Inter-UI-Bold.eot?#iefix') format('embedded-opentype'),
+       src: asset-url('Inter-UI-Bold.woff') format('woff')
+       // font-url('Inter-UI-Bold.ttf') format('truetype')
+}
+
 // @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
+//   font-family: "interUI-thicc";
+//   src: font-url('Inter-UI-Black.eot');
+//   src: font-url('Inter-UI-Black.eot?#iefix') format('embedded-opentype'),
+//        font-url('Inter-UI-Black.woff') format('woff'),
+//        font-url('Inter-UI-Black.ttf') format('truetype')
 // }
-// $my-font: "Font Name";

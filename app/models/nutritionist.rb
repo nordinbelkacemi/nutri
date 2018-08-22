@@ -4,4 +4,5 @@ class Nutritionist < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :subscriptions, dependent: :destroy
   has_many :certificates, dependent: :destroy
+  mount_uploader :photo, PhotoUploader
 end

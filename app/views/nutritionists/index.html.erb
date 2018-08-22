@@ -8,7 +8,15 @@
   <div class="row">
     <% @nutritionists.each do |nutritionist| %>
       <div class="col-xs-12 col-sm-6 col-md-3">
-        <%= nutritionist.name %>
+        <div class="image-nutritionist">
+          <%= cl_image_tag nutritionist.photo, width: 500, height:700, crop: :fill %>
+        </div>
+        <div class="name-nutritionist">
+          <%= nutritionist.name %>
+        </div>
+        <div class="specialty">
+          <%= nutritionist.specialty %>
+        </div>
       </div>
     <% end %>
   </div>

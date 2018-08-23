@@ -39,7 +39,8 @@ puts "  breakfast..."
     name: Faker::Food.dish,
     nutritionist: Nutritionist.first,
     type: "breakfast",
-    calories: rand(200..500)
+    calories: rand(200..500),
+    remote_photo_url: MEAL_PHOTOS[i]
   )
 end
 
@@ -49,7 +50,8 @@ puts "  lunch..."
     name: Faker::Food.dish,
     nutritionist: Nutritionist.first,
     type: "lunch",
-    calories: rand(500..800)
+    calories: rand(500..800),
+    remote_photo_url: MEAL_PHOTOS[i]
   )
 end
 
@@ -59,7 +61,8 @@ puts "  dinner..."
     name: Faker::Food.dish,
     nutritionist: Nutritionist.first,
     type: "dinner",
-    calories: rand(500..800)
+    calories: rand(500..800),
+    remote_photo_url: MEAL_PHOTOS[i]
   )
 end
 
@@ -69,7 +72,8 @@ puts "  snacks..."
     name: SNACKS[i],
     nutritionist: Nutritionist.first,
     type: "Snack",
-    calories: rand(50..300)
+    calories: rand(50..300),
+    remote_photo_url: MEAL_PHOTOS[i]
   )
 end
 

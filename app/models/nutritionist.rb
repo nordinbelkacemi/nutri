@@ -5,6 +5,9 @@ class Nutritionist < ApplicationRecord
   has_many :subscriptions, dependent: :destroy
   has_many :certificates, dependent: :destroy
   mount_uploader :photo, PhotoUploader
-
+  
   searchkick
+  def subscribed?
+    self.subscriptions.count > 0
+  end
 end

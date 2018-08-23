@@ -1,7 +1,7 @@
 <div class="banner" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 50%), url('https://images.unsplash.com/photo-1466637574441-749b8f19452f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1d992c355cbbe3f02ddc5f762f2ada73&auto=format&fit=crop&w=1000&q=80');">
   <div class="banner-content">
     <h1>nutri</h1>
-    <%= form_tag nutritionists_path, method: :get do %>
+    <%= form_tag nutritionists_path, method: :get, remote: true do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
@@ -12,19 +12,7 @@
 </div>
 
 <div class="container">
-  <div class="row">
-    <% @nutritionists.each do |nutritionist| %>
-      <div class="col-xs-12 col-sm-6 col-md-3 text-center">
-        <div class="nutritionist-card margin-top-20">
-          <%= cl_image_tag nutritionist.photo, width: 500, height:700, crop: :fill, class: "image-nutritionist" %>
-          <div class="name-nutritionist margin-top-5 margin-bottom-5">
-            <%= nutritionist.name %>
-          </div>
-          <div class="<%= nutritionist.specialty.downcase.split(" ").join("-") %> specialty-tag">
-            <%= nutritionist.specialty %>
-          </div>
-        </div>
-      </div>
-    <% end %>
+  <div class="row" id="js-nutritionists">
+    <%= render "nutritionist_faces", nutritionists: @nutritionists %>
   </div>
 </div>

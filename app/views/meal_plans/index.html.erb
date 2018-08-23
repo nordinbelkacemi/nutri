@@ -1,0 +1,6 @@
+<% @meal_plans.each do |meal_plan| %>
+  <%= meal_plan.name %>
+  <% meal_plan.meals.each do |meal| %>
+    <%= meal.name %>
+  <% end %>
+<% end %>

@@ -12,4 +12,5 @@ class Nutritionist < ApplicationRecord
   end
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
+  searchkick
 end

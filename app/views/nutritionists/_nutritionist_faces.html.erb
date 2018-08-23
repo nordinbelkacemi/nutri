@@ -1,0 +1,19 @@
+<% if nutritionists.empty? %>
+  <%= "Sorry pal, no healthy food for you..." %>
+<% else %>
+  <% nutritionists.each do |nutritionist| %>
+    <div class='col-xs-12 col-sm-6 col-md-3 text-center'>
+      <div class='nutritionist-card margin-top-20 margin-bottom-20'>
+        <%= link_to nutritionist_path(nutritionist) do %>
+          <%= cl_image_tag nutritionist.photo, width: 500, height:700, crop: :fill, class: 'image-nutritionist' %>
+        <% end %>
+        <div class='name-nutritionist margin-top-5 margin-bottom-5'>
+          <%= nutritionist.name %>
+        </div>
+        <div class='<%= nutritionist.specialty.downcase.split(' ').join('-') %> specialty-tag'>
+          <%= nutritionist.specialty %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

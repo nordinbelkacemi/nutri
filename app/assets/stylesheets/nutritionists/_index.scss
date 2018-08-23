@@ -1,3 +1,51 @@
 .image-nutritionist {
-  width: 300;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  border-radius: 5px;
+}
+
+.name-nutritionist {
+  font-family: $medium-font;
+  font-size: 18px;
+}
+
+.specialty-tag {
+  font-family: $light-font;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 0;
+  display: inline-block;
+  padding: 2px 10px;
+}
+
+.sports {
+  border: 2px solid #2E50A8;
+  color: #2E50A8;
+}
+
+.pediatric {
+  border: 2px solid #BC7AD8;
+  color: #BC7AD8;
+}
+
+.general {
+  border: 2px solid #C87070;
+  color: #C87070;
+}
+
+.maternal-health {
+  border: 2px solid #DCD86F;
+  color: #DCD86F;
+}
+
+.modelling {
+  border: 2px solid #0F9889;
+  color: #0F9889;
+}
+
+.form-control {
+  width: 500px;
+  height: 40px;
+  border-radius: 20px;
 }

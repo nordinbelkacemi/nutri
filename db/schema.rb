@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_19_083932) do
+ActiveRecord::Schema.define(version: 2018_08_22_231656) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(version: 2018_08_19_083932) do
     t.index ["meal_id"], name: "index_ingredients_on_meal_id"
   end
 
+  create_table "meal_plan_meals", force: :cascade do |t|
+    t.bigint "meal_id"
+    t.bigint "meal_plan_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["meal_id"], name: "index_meal_plan_meals_on_meal_id"
+    t.index ["meal_plan_id"], name: "index_meal_plan_meals_on_meal_plan_id"
+  end
+
   create_table "meal_plans", force: :cascade do |t|
     t.string "name"
     t.integer "daily_calories"
@@ -48,18 +57,18 @@ ActiveRecord::Schema.define(version: 2018_08_19_083932) do
     t.string "type"
     t.integer "calories"
     t.bigint "nutritionist_id"
-    t.bigint "meal_plan_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["meal_plan_id"], name: "index_meals_on_meal_plan_id"
     t.index ["nutritionist_id"], name: "index_meals_on_nutritionist_id"
   end
 
   create_table "nutritionists", force: :cascade do |t|
     t.string "name"
     t.string "bio"
+    t.string "specialty"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -88,14 +97,16 @@ ActiveRecord::Schema.define(version: 2018_08_19_083932) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "certificates", "nutritionists"
   add_foreign_key "ingredients", "meals"
+  add_foreign_key "meal_plan_meals", "meal_plans"
+  add_foreign_key "meal_plan_meals", "meals"
   add_foreign_key "meal_plans", "users"
-  add_foreign_key "meals", "meal_plans"
   add_foreign_key "meals", "nutritionists"
   add_foreign_key "reviews", "nutritionists"
   add_foreign_key "subscriptions", "nutritionists"

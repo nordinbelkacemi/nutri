@@ -1,38 +1,41 @@
+require_relative "constants"
+
 Nutritionist.destroy_all
 User.destroy_all
 
-snacks = [
-  "Apple slices with almond butter",
-  "Avocado and Salsa on Ezekiel Toast",
-  "Banana, Peanut Butter and Honey Roll-Ups",
-  "Celery Sticks and Skinny Buffalo Chicken Dip",
-  "Chef’s Cut Buffalo Style Chicken Jerky"
-]
-
-bios = [
-  "General twitter fanatic. Subtly charming pop culture advocate. Internet trailblazer.",
-  "General creator. Thinker. Coffee guru. Social media junkie. Unapologetic alcohol maven.",
-  "Hardcore thinker. Hipster-friendly student. Certified writer. Typical problem solver. Musicaholic. Reader.",
-  "Avid coffee expert. Writer. Reader. Internet nerd. Pop culture guru. Tvaholic. Travel fan. Beer evangelist.",
-  "Beer advocate. Award-winning gamer. Amateur alcohol geek. Internet ninja. Hardcore thinker.",
-  "Amateur coffee guru. Alcohol trailblazer. Typical pop culture ninja. Foodaholic. Music fan. Total web geek. Twitter buff. Internet nerd.",
-  "Food trailblazer. Troublemaker. Zombie scholar. Devoted analyst. Twitter buff. General alcohol guru. Evil coffee lover.",
-  "Unapologetic tv aficionado. Extreme beer fan. Hipster-friendly twitter evangelist. Total writer."
-]
-
 puts "creating users..."
-User.create(email: "kojoaddaquay@gmail.com", password: "123456")
-User.create(email: "nordinbelkacemi@gmail.com", password: "123456")
-User.create(email: "celine.te.mcgill@gmail.com", password: "123456")
+
+User.create!(
+  email: "celine.te.mcgill@gmail.com",
+  password: "123123",
+  remote_photo_url: "https://avatars1.githubusercontent.com/u/30133098?v=4"
+)
+
+User.create!(
+  email: "kojoaddaquay@gmail.com",
+  password: "123123",
+  remote_photo_url: "https://avatars2.githubusercontent.com/u/6564773?v=4"
+)
+
+User.create!(
+  email: "belkaceminordin@gmail.com",
+  password: "123123",
+  remote_photo_url: "https://avatars3.githubusercontent.com/u/38872998?v=4"
+)
 
 puts "creating nutritionists..."
 8.times do |i|
-  Nutritionist.create(name: "Dr. #{Faker::FunnyName.three_word_name}", bio: bios[i])
+  Nutritionist.create!(name: "Dr. #{Faker::FunnyName.three_word_name}",
+    bio: BIOS[i],
+    specialty: SPECIALTIES.sample,
+    remote_photo_url: NUTRITIONISTS_PHOTOS[i]
+  )
 end
 
 puts "creating meals..."
+puts "  breakfast..."
 5.times do |i|
-  Meal.create(
+  Meal.create!(
     name: Faker::Food.dish,
     nutritionist: Nutritionist.first,
     type: "breakfast",
@@ -40,8 +43,9 @@ puts "creating meals..."
   )
 end
 
+puts "  lunch..."
 5.times do |i|
-  Meal.create(
+  Meal.create!(
     name: Faker::Food.dish,
     nutritionist: Nutritionist.first,
     type: "lunch",
@@ -49,8 +53,9 @@ end
   )
 end
 
+puts "  dinner..."
 5.times do |i|
-  Meal.create(
+  Meal.create!(
     name: Faker::Food.dish,
     nutritionist: Nutritionist.first,
     type: "dinner",
@@ -58,23 +63,31 @@ end
   )
 end
 
+puts "  snacks..."
 5.times do |i|
-  Meal.create(
-    name: snacks[i],
+  Meal.create!(
+    name: SNACKS[i],
     nutritionist: Nutritionist.first,
     type: "Snack",
     calories: rand(50..300)
   )
 end
 
-puts "creating ingredients..."
-Ingredient.create(meal: Meal.first)
+2.times do |i|
+  celine_meal_plan = MealPlan.create!(user: User.first, name: "Celine's meal plan")
+  MealPlanMeal.create!(meal: Meal.first, meal_plan: celine_meal_plan)
+  MealPlanMeal.create!(meal: Meal.second, meal_plan: celine_meal_plan)
+  MealPlanMeal.create!(meal: Meal.third, meal_plan: celine_meal_plan)
+end
 
-puts "creating reviews..."
-Review.create(nutritionist: Nutritionist.first)
-
-puts "creating certificates..."
-Certificate.create(nutritionist: Nutritionist.first)
-
-puts "creating subscriptions..."
-Subscription.create(nutritionist: Nutritionist.first, user: User.first)
+# puts "creating ingredients..."
+# Ingredient.create!(meal: Meal.first)
+#
+# puts "creating reviews..."
+# Review.create!(nutritionist: Nutritionist.first)
+#
+# puts "creating certificates..."
+# Certificate.create!(nutritionist: Nutritionist.first)
+#
+# puts "creating subscriptions..."
+# Subscription.create!(nutritionist: Nutritionist.first, user: User.first)

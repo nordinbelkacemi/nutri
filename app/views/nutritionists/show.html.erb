@@ -1,40 +1,40 @@
-<div class="container margin-top-70">
-  <% if flash[:notice] %>
-  <div class="alert alert-success alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <%= flash[:notice] %>
-  </div>
-  <% end %>
-  <div class="col-xs-12 col-md-6">
-    <h1 id="title-yo"><%= @nutritionist.name %></h1>
-    <%= cl_image_tag(@nutritionist.nutritionists_photos, width: 1000, height: 1000, crop: :thumb, gravity: :face, class: "profile-avatar") %>
-    <h4>Bio</h4>
-    <%= @nutritionist.bio %>
-  </div>
-
-  <div class="col-xs-12 col-md-6">
-    <div class="nutritionist-nutritionists">
-      <div class="text-center">
-        <h1> <% @nutritionist.name.nil? ? "" : "#{@nutritionist.name}'s"%> Nutritionists </h1>
-      </div>
-      <ul>
-        <% @nutritionist_nutritionists.each do |nutritionist| %>
-        <div class="card margin-top-50" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%=nutritionist.nutritionists_photos %>')">
-          <h2 class="profile-headers card-description"><%= link_to "#{nutritionist.title}", nutritionist_path(nutritionist), class: "profile-headers" %></h2>
-
-          <div class="rating-stars rating-stars-profile">
-            <ul class="list-inline">
-              <% nutritionist.rating.times do %>
-                <li ><i class="fas fa-star"></i></li>
-              <% end %>
-            </ul>
-          </div>
-        </div>
-        <% end %>
-      </ul>
+<div class="container">
+  <div class="full-profile">
+    <div class="avatar-image">
+      <%= cl_image_tag @nutritionist.photo, width: 300, height:300, crop: :fill, class: "avatar-circle" %>
+    </div>
+    <div class="description">
+      <h4 id="title-yo"><%= @nutritionist.name %>Bio<%= @nutritionist.bio %></h4>
+    </div>
+    <div class="follow">
+      <%= link_to 'Follow'%>
     </div>
   </div>
+
+  <% if flash[:notice] %>
+    <div class="alert alert-success alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
 </div>
 
-
-
+<div class="row">
+  <% @nutritionist.meals.each do |meal| %>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="meal-card">
+        <%= link_to meals_path(meal) do %>
+          <%= cl_image_tag meal.photo, width: 300, height: 200, crop: :fill %>
+        <% end %>
+        <div class="meal-title">
+          <%= meal.name %>
+        </div>
+      </div>
+      <%= meal.calories.to_s %>
+      <br>
+      <div class="meal-type">
+        <%= meal.type %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -22,14 +22,14 @@ class NutritionistsController < ApplicationController
   def destroy
   end
 
-# private
+private
 
-#   def nutritionist_params
-#     prms = params.require(:nutritionist).permit(:name, :bio, :created_at, :updated_at, :NUTRITIONISTS_PHOTOS, :review, :certificate, :subscription)
-#     prms[:user_id] = current_user.id
-#     prms[:created_at] = DateTime.now
-#     return prms
-#   end
+  # def nutritionist_params
+  #   prms = params.require(:nutritionist).permit(:name, :bio, :created_at, :updated_at, :NUTRITIONISTS_PHOTOS, :review, :certificate, :subscription)
+  #   prms[:user_id] = current_user.id
+  #   prms[:created_at] = DateTime.now
+  #   return prms
+  # end
 
   def set_nutritionist
     @nutritionist = Nutritionist.find(params[:id])

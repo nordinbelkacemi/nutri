@@ -1,5 +1,5 @@
 .image-nutritionist {
-  max-height: 300px;
+  max-height: 200px;
   width: auto;
   height: auto;
   border-radius: 5px;
@@ -7,7 +7,7 @@
 
 .name-nutritionist {
   font-family: $medium-font;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .specialty-tag {
@@ -42,4 +42,10 @@
 .modelling {
   border: 2px solid #0F9889;
   color: #0F9889;
+}
+
+.form-control {
+  width: 500px;
+  height: 40px;
+  border-radius: 20px;
 }

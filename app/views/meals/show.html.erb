@@ -1,4 +1,4 @@
-<div class="banner-show" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 50%), url('');">
+<div class="banner-show" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 50%), url('<%= @meal.photo %>');">
   <div class="follow-nutritionist">
     <%= link_to nutritionist_path(@meal.nutritionist) do %>
     <%= cl_image_tag(@meal.nutritionist.photo, crop: :thumb, gravity: :face, class: "avatar-show") %>
@@ -11,11 +11,13 @@
 <div class="meal-container">
   <div class="row">
     <div class="col-xs-8">
-      <h2><%= @meal.type %></h2>
       <h1><%= @meal.name %></h1>
+      <p><%= @meal.type %></p>
 
       <h3><%= @meal.calories %> cal</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim voluptates, perferendis obcaecati nihil error exercitationem, quam quas, cumque architecto rem ratione. Aliquam, ipsum ratione sequi earum consequatur optio iste fugit.</p>
+      <% @ingredients.each do |ingredient| %>
+        <p><%= ingredient.name %></p>
+      <% end %>
     </div>
 
     <div class="col-xs-4">

@@ -1,23 +1,25 @@
 require_relative "constants"
+require "faraday"
+require "pry-byebug"
 
 Nutritionist.destroy_all
 User.destroy_all
 
 puts "creating users..."
 
-User.create(
+User.create!(
   email: "celine.te.mcgill@gmail.com",
   password: "123123",
   remote_photo_url: "https://avatars1.githubusercontent.com/u/30133098?v=4"
 )
 
-User.create(
+User.create!(
   email: "kojoaddaquay@gmail.com",
   password: "123123",
   remote_photo_url: "https://avatars2.githubusercontent.com/u/6564773?v=4"
 )
 
-User.create(
+User.create!(
   email: "belkaceminordin@gmail.com",
   password: "123123",
   remote_photo_url: "https://avatars3.githubusercontent.com/u/38872998?v=4"
@@ -25,62 +27,166 @@ User.create(
 
 puts "creating nutritionists..."
 8.times do |i|
-  Nutritionist.create(name: "Dr. #{Faker::FunnyName.three_word_name}",
+  Nutritionist.create!(name: "Dr. #{Faker::FunnyName.three_word_name}",
     bio: BIOS[i],
     specialty: SPECIALTIES.sample,
     remote_photo_url: NUTRITIONISTS_PHOTOS[i]
   )
 end
 
+####### meals with api
 puts "creating meals..."
-puts "  breakfast..."
-5.times do |i|
-  Meal.create(
-    name: Faker::Food.dish,
+
+request_url = "https://api.edamam.com/search?q=paleo&app_id=#{ENV['EDAMAM_APP_ID']}&app_key=#{ENV['EDAMAM_API_KEY']}&q="
+queries = ["breakfast", "lunch", "dinner", "snacks"]
+
+puts "creating breakfast..."
+response = Faraday.get request_url + "breakfast"
+recipes = JSON.parse(response.body)["hits"]
+
+for i in 0...5
+  recipe = recipes[i]["recipe"]
+
+  meal = Meal.create!(
+    name: recipe["label"],
     nutritionist: Nutritionist.first,
     type: "breakfast",
-    calories: rand(200..500)
+    calories: recipe["calories"].floor,
+    photo: recipe["image"]
   )
-end
 
-puts "  lunch..."
-5.times do |i|
-  Meal.create(
-    name: Faker::Food.dish,
+  recipe["ingredients"].each do |ingredient|
+    Ingredient.create!(
+      meal: meal,
+      name: ingredient["text"]
+    )
+  end
+end
+# prevent making too many requests too fast
+sleep(3)
+
+puts "creating lunch..."
+response = Faraday.get request_url + "lunch"
+recipes = JSON.parse(response.body)["hits"]
+
+for i in 0...5
+  recipe = recipes[i]["recipe"]
+
+  meal = Meal.create!(
+    name: recipe["label"],
     nutritionist: Nutritionist.first,
     type: "lunch",
-    calories: rand(500..800)
+    calories: recipe["calories"].floor,
+    photo: recipe["image"]
   )
+  recipe["ingredients"].each do |ingredient|
+    Ingredient.create!(
+      meal: meal,
+      name: ingredient["text"]
+    )
+  end
 end
 
-puts "  dinner..."
-5.times do |i|
-  Meal.create(
-    name: Faker::Food.dish,
+sleep(3)
+
+puts "creating dinner..."
+response = Faraday.get request_url + "dinner"
+recipes = JSON.parse(response.body)["hits"]
+
+for i in 0...5
+  recipe = recipes[i]["recipe"]
+
+  meal = Meal.create!(
+    name: recipe["label"],
     nutritionist: Nutritionist.first,
     type: "dinner",
-    calories: rand(500..800)
+    calories: recipe["calories"].floor,
+    photo: recipe["image"]
   )
+  recipe["ingredients"].each do |ingredient|
+    Ingredient.create!(
+      meal: meal,
+      name: ingredient["text"]
+    )
+  end
 end
 
-puts "  snacks..."
-5.times do |i|
-  Meal.create(
-    name: SNACKS[i],
+puts "creating snacks..."
+response = Faraday.get request_url + "snacks"
+recipes = JSON.parse(response.body)["hits"]
+
+for i in 0...5
+  recipe = recipes[i]["recipe"]
+
+  meal = Meal.create!(
+    name: recipe["label"],
     nutritionist: Nutritionist.first,
-    type: "Snack",
-    calories: rand(50..300)
+    type: "snacks",
+    calories: recipe["calories"].floor,
+    photo: recipe["image"]
   )
+  recipe["ingredients"].each do |ingredient|
+    Ingredient.create!(
+      meal: meal,
+      name: ingredient["text"]
+    )
+  end
 end
+
+# puts "  breakfast..."
+# 5.times do |i|
+#   Meal.create!(
+#     name: Faker::Food.dish,
+#     nutritionist: Nutritionist.first,
+#     type: "breakfast",
+#     calories: rand(200..500),
+#     remote_photo_url: MEAL_PHOTOS[i]
+#   )
+# end
+
+# puts "  lunch..."
+# 5.times do |i|
+#   Meal.create!(
+#     name: Faker::Food.dish,
+#     nutritionist: Nutritionist.first,
+#     type: "lunch",
+#     calories: rand(500..800),
+#     remote_photo_url: MEAL_PHOTOS[i]
+#   )
+# end
+
+# puts "  dinner..."
+# 5.times do |i|
+#   Meal.create!(
+#     name: Faker::Food.dish,
+#     nutritionist: Nutritionist.first,
+#     type: "dinner",
+#     calories: rand(500..800),
+#     remote_photo_url: MEAL_PHOTOS[i]
+#   )
+# end
+
+# puts "  snacks..."
+# 5.times do |i|
+#   Meal.create!(
+#     name: SNACKS[i],
+#     nutritionist: Nutritionist.first,
+#     type: "Snack",
+#     calories: rand(50..300),
+#     remote_photo_url: MEAL_PHOTOS[i]
+#   )
+# end
+
+############ end meals with api
 
 puts "creating ingredients..."
-Ingredient.create(meal: Meal.first)
+Ingredient.create!(meal: Meal.first)
 
 puts "creating reviews..."
-Review.create(nutritionist: Nutritionist.first)
+Review.create!(nutritionist: Nutritionist.first)
 
 puts "creating certificates..."
-Certificate.create(nutritionist: Nutritionist.first)
+Certificate.create!(nutritionist: Nutritionist.first)
 
 puts "creating subscriptions..."
-Subscription.create(nutritionist: Nutritionist.first, user: User.first)
+Subscription.create!(nutritionist: Nutritionist.first, user: User.first)

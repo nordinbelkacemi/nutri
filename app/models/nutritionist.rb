@@ -9,4 +9,7 @@ class Nutritionist < ApplicationRecord
   def subscribed?
     self.subscriptions.count > 0
   end
+
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
+  searchkick
 end

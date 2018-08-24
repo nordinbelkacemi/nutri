@@ -6,4 +6,5 @@ class MealsController < ApplicationController
   end
 
   private
+
 end

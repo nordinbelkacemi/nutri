@@ -7,19 +7,22 @@
 }
 
 .avatar-show {
-  width: 160px;
-  height: 160px;
-  position: absolute;
-  top: 400px;
-  right: 150px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   border: 1px solid white;
+}
+
+.header {
+  margin-left: 5%;
+  margin-top: 20px;
 }
 
 .meal-container {
   position: relative;
   width: 100%;
-  margin-left: 10%;
+  margin-top: 30px;
+  margin-left: 5%;
 }
 
 .follow-button {
@@ -41,14 +44,32 @@
   margin-bottom: 20px;
 }
 
+.inline {
+  display: flex;
+
+}
+
+.grey {
+  color:#6D6D6D;
+}
+
 .breakfast {
- color: #9D8DED;
+ color: #8DC088;
 }
 
 .lunch {
-
+  color: #517CE8;
 }
 
 .dinner {
+  color: #D75656;
+}
 
+.card {
+  height: 100px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
 }

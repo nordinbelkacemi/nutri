@@ -1,40 +1,77 @@
 <div class="banner-show" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 50%), url('<%= @meal.photo %>');">
-  <div class="follow-nutritionist">
-    <%= link_to nutritionist_path(@meal.nutritionist) do %>
-    <%= cl_image_tag(@meal.nutritionist.photo, crop: :thumb, gravity: :face, class: "avatar-show") %>
-    <% end %>
-    <a href="#" class="btn btn-primary follow-button">follow</a>
-  </div>
+</div>
 
+<div class="header">
+  <h4 class="grey">Vegan</h4>
+  <p class="<%= @meal.type %>"><%= @meal.type %></p>
+</div>
+
+<div class="title-and-suggestions">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 header">
+        <h1><%= @meal.name %></h1>
+
+      <div class="inline">
+        <div>
+          <%= link_to nutritionist_path(@meal.nutritionist) do %>
+          <%= cl_image_tag(@meal.nutritionist.photo, crop: :thumb, gravity: :face, class: "avatar-show") %>
+          <% end %>
+        </div>
+        <div>
+          <p class="grey">By: <strong><%= @meal.nutritionist.name %></strong>, dietician</p>
+          <p class="grey">August 24th 2018</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-md-5">
+      <p class="grey">Other recipes you may like</p>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-2">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @meal.photo %>');">
+            </div>
+            <%= @meal.name %>
+
+          </div>
+          <div class="col-xs-2">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @meal.photo %>');">
+            </div>
+            <%= @meal.name %>
+
+          </div>
+          <div class="col-xs-2">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @meal.photo %>');">
+            </div>
+            <%= @meal.name %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="meal-container">
   <div class="row">
-    <div class="col-xs-8">
-      <br>
-      <p class="breakfast"><%= @meal.type %></p>
-      <h1><%= @meal.name %></h1>
+    <div class="col-xs-6">
 
-      <h4><%= @meal.calories %> cal</h3>
+      <h4>Ingredients</h4>
 
-      <div class="col-xs-5 ingredient-table">
-
-        <h4>Ingredients</h4>
-        <div>
-          <ul class="list-group list-group-flush">
+      <div>
+        <ul class="list-group list-group-flush">
           <% @ingredients.each do |ingredient| %>
             <li class="list-group-item"><%= ingredient.name %></li>
           <% end %>
-          </ul>
-        </div>
-
-        <div class="btn btn-success">See Recipe</div>
+        </ul>
       </div>
     </div>
 
 
     <div class="col-xs-4">
-
+      <div class="header">
+        <h4>Recipe</h4>
+        <p><%= @meal.recipe %></p>
+      </div>
     </div>
   </div>
 </div>

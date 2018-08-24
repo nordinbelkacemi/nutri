@@ -52,7 +52,8 @@ for i in 0...5
     nutritionist: Nutritionist.first,
     type: "breakfast",
     calories: recipe["calories"].floor,
-    photo: recipe["image"]
+    photo: recipe["image"],
+    recipe: "Stir together tuna, mayonnaise, green onions, red pepper, and balsamic vinegar in a bowl. Season with pepper and garlic salt, then pack the avocado halves with the tuna mixture. Garnish with reserved green onions and a dash of black pepper before serving."
   )
 
   recipe["ingredients"].each do |ingredient|

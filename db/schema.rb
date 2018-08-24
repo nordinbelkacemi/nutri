@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2018_08_23_144348) do
     t.string "type"
     t.integer "calories"
     t.bigint "nutritionist_id"
+    t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"

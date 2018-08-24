@@ -122,7 +122,7 @@ for i in 0...5
   meal = Meal.create!(
     name: recipe["label"],
     nutritionist: Nutritionist.first,
-    type: "snacks",
+    type: "snack",
     calories: recipe["calories"].floor,
     photo: recipe["image"]
   )
@@ -141,17 +141,6 @@ end
   MealPlanMeal.create!(meal: Meal.third, meal_plan: celine_meal_plan)
 end
 
-# puts "creating ingredients..."
-# Ingredient.create!(meal: Meal.first)
-#
-# puts "creating reviews..."
-# Review.create!(nutritionist: Nutritionist.first)
-#
-# puts "creating certificates..."
-# Certificate.create!(nutritionist: Nutritionist.first)
-#
-# puts "creating subscriptions..."
-# Subscription.create!(nutritionist: Nutritionist.first, user: User.first)
 
 # puts "  breakfast..."
 # 5.times do |i|
@@ -198,15 +187,3 @@ end
 # end
 
 ############ end meals with api
-
-puts "creating ingredients..."
-Ingredient.create!(meal: Meal.first)
-
-puts "creating reviews..."
-Review.create!(nutritionist: Nutritionist.first)
-
-puts "creating certificates..."
-Certificate.create!(nutritionist: Nutritionist.first)
-
-puts "creating subscriptions..."
-Subscription.create!(nutritionist: Nutritionist.first, user: User.first)

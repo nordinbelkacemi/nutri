@@ -1,0 +1,25 @@
+.follow {
+  display: flex;
+  border: 3px solid rgba(81, 124, 232, 0.8);
+  border-radius: 10px;
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  justify-content: center;
+  color: #517CE8;
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom : 20px;
+  opacity: 1.2;
+  text-decoration: none;
+}
+
+.follow:hover {
+  text-decoration: none;
+  color: white;
+  opacity: 1.2;
+  background-color: rgba(81, 124, 232, 0.8);
+}

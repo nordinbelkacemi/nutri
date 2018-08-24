@@ -26,10 +26,10 @@
 
     <div class="col-xs-12 col-md-5">
       <p class="grey">Other recipes you may like</p>
-      <div class="container">
+      <div class="container meal-container">
         <div class="row">
           <% @suggestions.each do |meal| %>
-          <div class="col-xs-2">
+          <div class="col-xs-4">
             <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= meal.photo %>');">
             </div>
             <p><%= meal.name %></p>
@@ -43,7 +43,7 @@
 
 <div class="meal-container">
   <div class="row">
-    <div class="col-xs-6">
+    <div class="col-xs-6 margin-left-5">
 
       <h4>Ingredients</h4>
 

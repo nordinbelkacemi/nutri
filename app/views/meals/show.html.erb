@@ -1,4 +1,4 @@
-<div class="banner-show" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 50%), url('<%= @meal.photo %>');">
+<div class="banner-show" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 50%), url('https://images.unsplash.com/photo-1529592411653-00d59de9c738?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5a3baf0a88056748234ea5a57a1ba42c&auto=format&fit=crop&w=1950&q=80');">
 </div>
 
 <div class="header">
@@ -28,23 +28,13 @@
       <p class="grey">Other recipes you may like</p>
       <div class="container">
         <div class="row">
+          <% @suggestions.each do |meal| %>
           <div class="col-xs-2">
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @meal.photo %>');">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= meal.photo %>');">
             </div>
-            <%= @meal.name %>
-
+            <p><%= meal.name %></p>
           </div>
-          <div class="col-xs-2">
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @meal.photo %>');">
-            </div>
-            <%= @meal.name %>
-
-          </div>
-          <div class="col-xs-2">
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @meal.photo %>');">
-            </div>
-            <%= @meal.name %>
-          </div>
+          <% end %>
         </div>
       </div>
     </div>

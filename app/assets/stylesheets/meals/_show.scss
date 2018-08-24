@@ -1,0 +1,79 @@
+
+.banner-show {
+  position: relative;
+  height: 60vh;
+  width: 100%;
+  color: white;
+}
+
+.avatar-show {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+
+.header {
+  margin-left: 5%;
+  margin-top: 20px;
+}
+
+.meal-container {
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+  margin-left: 5%;
+}
+
+.follow-button {
+  margin-top: 20px;
+  position: absolute;
+  top: 575px;
+  right: 160px;
+}
+
+.ingredient-table {
+  width: 420px;
+  color:grey;
+  font-family: $italic-font;
+  padding-left: 0;
+
+}
+
+.no-margin-bottom {
+  margin-bottom: 20px;
+}
+
+.inline {
+  display: flex;
+
+}
+
+.grey {
+  color:#6D6D6D;
+}
+
+.breakfast {
+ color: #8DC088;
+}
+
+.lunch {
+  color: #517CE8;
+}
+
+.dinner {
+  color: #D75656;
+}
+
+.meal-container {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.card {
+  height: 100px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+}

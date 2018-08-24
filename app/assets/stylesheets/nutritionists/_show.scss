@@ -1,28 +1,15 @@
-.follow {
-  display: flex;
-  border: 3px solid #517CE8;
-  border-radius: 25px;
-  align-items: center;
-  width: 200px;
-  justify-content: center;
-
-  color: #517CE8;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 26px;
-  margin-top: 20px;
-  margin-bottom : 40px;
-
-}
 
 .description {
   box-sizing: border-box;
   display: block;
-  line-height: 20px;
+  // line-height: 20px;
   position: relative offset body;
-  z-index: auto;
+  // z-index: auto;
+}
+.bio {
+  color: #9B9B9B;
+  font-family: $light-font;
+  text-align:center;
 }
 
 .full-profile {
@@ -59,4 +46,17 @@
   width:100%;
   margin-top: 10;
   margin-bottom: 10;
+}
+
+
+.breakfast {
+  color: #8DC088
+}
+
+.lunch {
+  color: #517CE8
+}
+
+.dinner {
+  color: #D75656
 }

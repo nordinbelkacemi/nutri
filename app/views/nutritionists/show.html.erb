@@ -4,30 +4,33 @@
       <%= cl_image_tag @nutritionist.photo, width: 500, height:500, crop: :fill, class: "avatar-circle" %>
     </div>
     <div class="description">
-      <h4 id="title-yo"><%= @nutritionist.name %>Bio<%= @nutritionist.bio %></h4>
+      <h4 class="bio"> My name is <%= @nutritionist.name %>.
+        <p><%= @nutritionist.bio %></p>
+      </h4>
     </div>
-    <div class="follow">
-      <%= link_to 'Follow'%>
-    </div>
+
+    <%= link_to '#', class: "follow" do %>
+      Follow
+    <% end %>
   </div>
   <div class="row" >
   <% @nutritionist.meals.each do |meal| %>
-    <div class="col-xs-12 col-sm-6 col-md-4 text-center ">
-      <div class="meal-card">
+    <div class="col-xs-12 col-sm-6 col-md-4 text-center margin-bottom-2 ">
+      <div class="meal-card" >
         <%= link_to meals_path(meal) do %>
         <%= cl_image_tag meal.photo, width: 500, height: 300, crop: :fill %>
         <% end %>
-        <div class="meal-title">
-          <%= meal.name %>
-        </div>
-      </div>
-        <%= meal.calories.to_s %>
-        <br>
-      <div class="meal-type">
-        <%= meal.type %>
+          <div class="meal-infos">
+            <h4 style="float: left;"><%= meal.name %></h4>
+            <h4 style="float: right;"><%= meal.calories.to_s %><br></h4>
+            <div class="meal-type", style="float: left;">
+              <h5><%= raise %></h5>
+            </div>
+          </div>
       </div>
     </div>
   <% end %>
 </div>
+
 
 

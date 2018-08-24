@@ -7,6 +7,7 @@ class CreateMeals < ActiveRecord::Migration[5.2]
       t.integer :calories
       t.references :nutritionist, foreign_key: true
       t.references :meal_plan, foreign_key: true
+      t.string :photo
 
       t.timestamps
     end

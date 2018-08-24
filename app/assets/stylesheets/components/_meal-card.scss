@@ -1,0 +1,41 @@
+
+.meal-card {
+  a {
+    img {
+      border-radius: 10px;
+      margin-top: 40px;
+    }
+  }
+}
+.meal-infos {
+ position: relative;
+ padding: 8px;
+}
+
+// .meal-calories {
+//   text-align: right;
+// }
+
+.meal-type {
+  padding: 8px;
+  position: absolute;
+  margin-top: 35px;
+}
+
+.breakfast {
+  color: #8DC088
+
+}
+
+.lunch {
+  color: #517CE8
+
+}
+
+.dinner {
+  color: #D75656
+}
+
+.snack {
+  color: #F5A444
+}

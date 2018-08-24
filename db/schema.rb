@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2018_08_22_231656) do
     t.string "type"
     t.integer "calories"
     t.bigint "nutritionist_id"
+    t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["nutritionist_id"], name: "index_meals_on_nutritionist_id"
@@ -65,6 +66,7 @@ ActiveRecord::Schema.define(version: 2018_08_22_231656) do
   create_table "nutritionists", force: :cascade do |t|
     t.string "name"
     t.string "bio"
+    t.string "specialty"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"

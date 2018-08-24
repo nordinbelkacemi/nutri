@@ -4,7 +4,7 @@ class NutritionistsController < ApplicationController
 
   def index
     if params[:query].present?
-      @nutritionists = Nutritionist.search(params[:query]).results
+      @nutritionists = Nutritionist.search_by_name_and_specialty(params[:query])
     else
       @nutritionists = Nutritionist.all
     end

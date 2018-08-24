@@ -1,0 +1,43 @@
+.meal-card-photo {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.meal-card-bottom-text {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meal-name {
+  font-size: 14px
+}
+
+.meal-card-calories {
+  font-size: 12px;
+}
+
+.meal-type {
+  font-family: $light-font;
+  font-size: 12px;
+}
+
+.breakfast {
+  color: #8DC088;
+}
+
+.lunch {
+  color: #517CE8;
+}
+
+.dinner {
+  color: #D75656;
+}
+
+.mask {
+  height: 154px;
+  background-size: cover;
+  background-position-y: 75%;
+  background-repeat: no-repeat;
+}

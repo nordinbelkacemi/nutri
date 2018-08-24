@@ -37,12 +37,12 @@ SPECIALTIES = [
 ]
 
 MEAL_PHOTOS = [
-  "https://www.innit.com/assets/images/team/team/james_armstrong_a.jpg",
-  "https://www.innit.com/assets/images/team/team/kristina_aguirre_a.jpg",
-  "https://www.innit.com/assets/images/team/team/greg_angrish_a.jpg",
-  "https://www.innit.com/assets/images/team/team/vincent_arcelo_a.jpg",
-  "https://www.innit.com/assets/images/team/team/shyam_ashok_a.jpg",
-  "https://www.innit.com/assets/images/team/team/juan_baranda_a.jpg",
-  "https://www.innit.com/assets/images/team/team/anisa-bashiri-a.jpg",
-  "https://www.innit.com/assets/images/team/team/diego_bravo_a.jpg"
+  "https://www.simplyrecipes.com/wp-content/uploads/2014/08/bruschetta-tomato-basil-horiz-a-1600.jpg",
+  "https://www.simplyrecipes.com/wp-content/uploads/2014/08/bruschetta-tomato-basil-horiz-a-1600.jpg",
+  "https://www.simplyrecipes.com/wp-content/uploads/2014/08/bruschetta-tomato-basil-horiz-a-1600.jpg",
+  "https://www.simplyrecipes.com/wp-content/uploads/2014/08/bruschetta-tomato-basil-horiz-a-1600.jpg",
+  "https://www.simplyrecipes.com/wp-content/uploads/2014/08/bruschetta-tomato-basil-horiz-a-1600.jpg",
+  "https://www.simplyrecipes.com/wp-content/uploads/2014/08/bruschetta-tomato-basil-horiz-a-1600.jpg",
+  "https://www.simplyrecipes.com/wp-content/uploads/2014/08/bruschetta-tomato-basil-horiz-a-1600.jpg",
+  "https://www.simplyrecipes.com/wp-content/uploads/2014/08/bruschetta-tomato-basil-horiz-a-1600.jpg"
 ]

@@ -1,36 +1,37 @@
 <div class="container">
   <div class="full-profile">
     <div class="avatar-image">
-      <%= cl_image_tag @nutritionist.photo, width: 500, height:500, crop: :fill, class: "avatar-circle" %>
+      <%= cl_image_tag @nutritionist.photo, width: 300, height:300, crop: :fill, class: "avatar-circle" %>
     </div>
     <div class="description">
-      <h4 class="bio"> My name is <%= @nutritionist.name %>.
+      <h6 class="bio"> My name is <%= @nutritionist.name %>.
         <p><%= @nutritionist.bio %></p>
-      </h4>
+      </h6>
     </div>
 
     <%= link_to '#', class: "follow" do %>
       Follow
     <% end %>
   </div>
-  <div class="row" >
+  <div class="row">
   <% @nutritionist.meals.each do |meal| %>
-    <div class="col-xs-12 col-sm-6 col-md-4 text-center margin-bottom-2 ">
-      <div class="meal-card" >
-        <%= link_to meals_path(meal) do %>
-        <%= cl_image_tag meal.photo, width: 500, height: 300, crop: :fill %>
-        <% end %>
-          <div class="meal-infos">
-            <h4 style="float: left;"><%= meal.name %></h4>
-            <h4 style="float: right;"><%= meal.calories.to_s %><br></h4>
-            <div class="<%= meal.type.downcase %> meal-type", style="float: left;">
-              <h5><%= meal.type %></h5>
-            </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+    <!-- <div class="col-xs-12 col-sm-6 col-md-3 text-center margin-bottom-2 margin-left-2 margin-right-2"> -->
+      <div class="meal-card margin-top-5 margin-bottom-5 margin-left-10 margin-right-10">
+        <div class="mask" style="background-image: url('<%= cl_image_path meal.photo %>');">
+        </div>
+        <div class="meal-card-bottom-text">
+          <div class="meal-card-name">
+            <%= meal.name %>
           </div>
+          <div class="meal-card-calories">
+            <%= "#{meal.calories} cal"%>
+          </div>
+        </div>
+        <div class="<%= meal.type.downcase %> meal-type">
+          <%= meal.type %>
+        </div>
       </div>
     </div>
   <% end %>
 </div>
-
-
-

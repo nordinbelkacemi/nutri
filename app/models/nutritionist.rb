@@ -10,6 +10,10 @@ class Nutritionist < ApplicationRecord
     self.subscriptions.count > 0
   end
 
-
-  searchkick
+  include PgSearch
+  pg_search_scope :search_by_name_and_specialty,
+    against: [ :name, :specialty ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end

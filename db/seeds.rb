@@ -83,15 +83,3 @@ end
   MealPlanMeal.create!(meal: Meal.second, meal_plan: celine_meal_plan)
   MealPlanMeal.create!(meal: Meal.third, meal_plan: celine_meal_plan)
 end
-
-# puts "creating ingredients..."
-# Ingredient.create!(meal: Meal.first)
-#
-# puts "creating reviews..."
-# Review.create!(nutritionist: Nutritionist.first)
-#
-# puts "creating certificates..."
-# Certificate.create!(nutritionist: Nutritionist.first)
-#
-# puts "creating subscriptions..."
-# Subscription.create!(nutritionist: Nutritionist.first, user: User.first)

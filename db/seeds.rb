@@ -1,6 +1,5 @@
-  require_relative "constants"
+require_relative "constants"
 require "faraday"
-require "pry-byebug"
 
 Nutritionist.destroy_all
 User.destroy_all

@@ -1,6 +1,7 @@
 // Import Google fonts
 
 // Define fonts for body and headers
+$italic-font: "interUI-italic";
 $light-font: "interUI-light";
 $medium-font: "interUI-medium";
 $bold-font: "interUI-bold";
@@ -28,6 +29,14 @@ $bold-font: "interUI-bold";
   // src: font-url('Inter-UI-Bold.eot');
   // src: font-url('Inter-UI-Bold.eot?#iefix') format('embedded-opentype'),
        src: asset-url('Inter-UI-Bold.woff') format('woff')
+       // font-url('Inter-UI-Bold.ttf') format('truetype')
+}
+
+@font-face {
+  font-family: "interUI-italic";
+  // src: font-url('Inter-UI-Bold.eot');
+  // src: font-url('Inter-UI-Bold.eot?#iefix') format('embedded-opentype'),
+       src: asset-url('Inter-UI-Italic.woff') format('woff')
        // font-url('Inter-UI-Bold.ttf') format('truetype')
 }
 

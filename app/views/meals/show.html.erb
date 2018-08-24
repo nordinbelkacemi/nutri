@@ -11,14 +11,27 @@
 <div class="meal-container">
   <div class="row">
     <div class="col-xs-8">
+      <br>
+      <p class="breakfast"><%= @meal.type %></p>
       <h1><%= @meal.name %></h1>
-      <p><%= @meal.type %></p>
 
-      <h3><%= @meal.calories %> cal</h3>
-      <% @ingredients.each do |ingredient| %>
-        <p><%= ingredient.name %></p>
-      <% end %>
+      <h4><%= @meal.calories %> cal</h3>
+
+      <div class="col-xs-5 ingredient-table">
+
+        <h4>Ingredients</h4>
+        <div>
+          <ul class="list-group list-group-flush">
+          <% @ingredients.each do |ingredient| %>
+            <li class="list-group-item"><%= ingredient.name %></li>
+          <% end %>
+          </ul>
+        </div>
+
+        <div class="btn btn-success">See Recipe</div>
+      </div>
     </div>
+
 
     <div class="col-xs-4">
 

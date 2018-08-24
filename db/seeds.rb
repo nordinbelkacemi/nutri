@@ -120,7 +120,6 @@ for i in 0...5
 
   meal = Meal.create!(
     name: recipe["label"],
->>>>>>> a3a35ea5561c59850f91e9ecde280b6f399af514
     nutritionist: Nutritionist.first,
     type: "snacks",
     calories: recipe["calories"].floor,

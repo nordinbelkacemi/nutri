@@ -44,3 +44,5 @@ MEAL_PHOTOS = [
 "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=74ac7c1aa35dc36f50cc1ac7517c70a7&auto=format&fit=crop&w=1950&q=80",
 
 ]
+
+MEAL_RECIPES =

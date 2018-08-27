@@ -1,0 +1,40 @@
+.meal-plan-show-container {
+
+  .meal-card {
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 5%;
+  }
+
+  hr {
+    width: 100%;
+    color: #D3D3D3;
+  }
+}
+
+.meal-plan-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.meal-plan-name {
+  margin-bottom: 5%;
+  font-size: 30px;
+}
+.container-text-left {
+text-align: left;
+}
+
+.meal-type-left-side {
+  margin-bottom: 50%
+}
+
+.meal-type-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ingredients-button {
+  font-size: 50px;
+}

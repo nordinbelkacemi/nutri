@@ -15,35 +15,36 @@
     </ul>
   </div>
 
-  <div class="meals-photo">
-    <%= cl_image_tag(@meal.photo, crop: :thumb, gravity: :face) %>
-  </div>
-
-  <div class="inline">
-    <div>
-      <%= link_to nutritionist_path(@meal.nutritionist) do %>
-      <%= cl_image_tag(@meal.nutritionist.photo, crop: :thumb, gravity: :face, class: "avatar-show") %>
-      <% end %>
+  <div class="meal-frame">
+    <div class="meals-photo">
+      <%= cl_image_tag(@meal.photo, crop: :thumb, gravity: :face) %>
     </div>
-    <div>
-      <p class="grey">By: <strong><%= @meal.nutritionist.name %></strong>, dietician</p>
-      <p class="grey">August 24th 2018</p>
+
+    <div class="inline">
+      <div>
+        <%= link_to nutritionist_path(@meal.nutritionist) do %>
+        <%= cl_image_tag(@meal.nutritionist.photo, crop: :thumb, gravity: :face, class: "avatar-show") %>
+        <% end %>
+      </div>
+      <div>
+        <p class="grey">By: <strong><%= @meal.nutritionist.name %></strong>, dietician</p>
+        <p class="nutritionist-bio"><%= @meal.nutritionist.bio %></p>
+      </div>
     </div>
   </div>
 
-  <div class="meals-description">
-    <h4>Description</h4>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis eos est beatae illum commodi, consectetur asperiores ipsum tempora vero iusto, quisquam explicabo doloremque maiores minima laudantium, magnam porro repellendus quam!</p>
-  </div>
+  <div class="meal-frame">
+    <div class="meals-description">
+      <h4>Description</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis eos est beatae illum commodi, consectetur asperiores ipsum tempora vero iusto, quisquam explicabo doloremque maiores minima laudantium, magnam porro repellendus quam!</p>
+    </div>
 
-  <div class="inline">
-    <i class="far fa-clock"></i>
-    <p class="subtext">20 min</p>
-  </div>
-
-  <div class="inline">
-    <i class="fas fa-utensils"></i>
-    <p class="subtext">Serves <%= @meal.yield %></p>
+    <div class="inline-icons">
+      <i class="far fa-clock fa-2x"></i>
+      <p class="subtext">20 min</p>
+      <i class="fas fa-utensils fa-2x"></i>
+      <p class="subtext">Serves <%= @meal.yield %></p>
+    </div>
   </div>
 
   <div class="chart">
@@ -68,7 +69,7 @@
         chart.draw(data, options);
       }
     </script>
-    <div id="donutchart" style="width: 600px; height: 500px;"></div>
+    <div id="donutchart" style="width: 600px; height: 400px;"></div>
   </div>
 
   <div class="meals-header">
@@ -85,6 +86,7 @@
   <div class="meals-description">
     <h4>Recipe</h4>
     <p><%= @meal.recipe %></p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur odit, veritatis asperiores aliquid neque officia quia est id harum sunt veniam minus cupiditate laboriosam ullam laudantium totam eligendi reprehenderit accusamus.</p>
   </div>
 
   <div class="col-xs-12 col-md-5">

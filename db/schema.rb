@@ -58,6 +58,11 @@ ActiveRecord::Schema.define(version: 2018_08_22_231656) do
     t.integer "calories"
     t.bigint "nutritionist_id"
     t.string "photo"
+    t.string "healthLabels"
+    t.string "carbs"
+    t.string "fat"
+    t.string "protein"
+    t.integer "yield"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["nutritionist_id"], name: "index_meals_on_nutritionist_id"

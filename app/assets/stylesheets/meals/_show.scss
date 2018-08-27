@@ -7,6 +7,16 @@
   margin-bottom: 10px;
 }
 
+.health-labels {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.health-labels > li {
+  padding-left: 10px;
+}
+
 .meals-photo {
   margin-bottom: 50px;
 }

@@ -8,6 +8,7 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.1'
 gem 'redis'
+gem 'faraday'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
@@ -16,6 +17,7 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'simple_token_authentication'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
@@ -33,4 +35,4 @@ end
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
-gem 'searchkick', '~> 3.0'
+gem 'pg_search'

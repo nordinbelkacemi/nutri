@@ -1,9 +1,42 @@
+.meal-title{
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
 
-.banner-show {
-  position: relative;
-  height: 60vh;
-  width: 100%;
-  color: white;
+.meals-header {
+  margin-bottom: 10px;
+}
+
+.meals-photo {
+  margin-bottom: 50px;
+}
+
+.meals-description {
+  margin: 20% 30%;
+
+}
+
+.chart {
+  margin: 20% 30%;
+}
+
+.subtext {
+  margin-left: 10px;
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.ingredients {
+  border-left: 4px solid #5A5A5A;
+  list-style-type: none;
+  padding-left: 10px;
+  font-family: $italic-font;
+  margin-bottom: 100px;
+
+}
+
+.meal-recipe {
+
 }
 
 .avatar-show {
@@ -13,16 +46,20 @@
   border: 1px solid white;
 }
 
-.header {
-  margin-left: 5%;
-  margin-top: 20px;
-}
+
 
 .meal-container {
   position: relative;
   width: 100%;
   margin-top: 30px;
   margin-left: 5%;
+}
+
+.meals-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .follow-button {
@@ -69,6 +106,7 @@
   margin: 0 !important;
   padding: 0 !important;
 }
+
 .card {
   height: 100px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
@@ -76,4 +114,12 @@
   background-position: center;
   color: white;
   position: relative;
+}
+
+
+.banner-show {
+  position: relative;
+  height: 60vh;
+  width: 100%;
+  color: white;
 }

@@ -1,0 +1,15 @@
+<div class="tabs">
+  <% if current_user.nutritionists.nil? %>
+    <%= "Sorry bud" %>
+  <% else %>
+    <% current_user.nutritionists.each do |nutritionist| %>
+      <%= link_to new_meal_plan_path(nutritionist_id: nutritionist.id), remote: true, class: "tab-nutritionist" do %>
+        <%= nutritionist.name %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="row" id="js-nutritionist-meals">
+  <%= render "nutritionist_meals", nutritionist: @nutritionist %>
+</div>

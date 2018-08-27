@@ -11,6 +11,7 @@
   display: flex;
   justify-content: center;
   list-style-type: none;
+  margin-left: none;
 }
 
 .health-labels > li {
@@ -28,7 +29,7 @@
 }
 
 .chart {
-  margin: 5% 5%;
+  margin: none;
 }
 
 .subtext {
@@ -52,7 +53,8 @@
 }
 
 .meal-recipe {
-
+  width: 40%;
+  margin-bottom: 10%;
 }
 
 .avatar-show {
@@ -76,16 +78,21 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: white;
+  margin-top: 1px;
 }
 
 .meal-frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border: 1px solid rgba(0,0,0,0.3);
   padding: 15px;
   border-radius: 5px;
   width: 33%;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-  text-align: center;
   margin-bottom: 5%;
 }
 

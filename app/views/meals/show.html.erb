@@ -25,8 +25,8 @@
   </div>
 
   <div class="meals-description">
-    <h4>Recipe</h4>
-    <p><%= @meal.recipe %></p>
+    <h4>Description</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis eos est beatae illum commodi, consectetur asperiores ipsum tempora vero iusto, quisquam explicabo doloremque maiores minima laudantium, magnam porro repellendus quam!</p>
   </div>
 
   <div class="inline">
@@ -43,6 +43,7 @@
 
   <div class="meals-header">
     <h4>Ingredients</h4>
+  </div>
   <div>
     <ul class="ingredients">
       <% @ingredients.each do |ingredient| %>
@@ -50,11 +51,11 @@
       <% end %>
     </ul>
   </div>
-</div>
 
-
-
-
+  <div class="meals-description">
+    <h4>Recipe</h4>
+    <p><%= @meal.recipe %></p>
+  </div>
 
   <div class="col-xs-12 col-md-5">
     <p class="grey">Other recipes you may like</p>
@@ -72,25 +73,4 @@
   </div>
 </div>
 
-
-<div class="title-and-suggestions">
-  <div class="row">
-    <div class="col-xs-12 col-md-6 header">
-    </div>
-  </div>
-</div>
-
-<div class="meal-container">
-  <div class="row">
-
-
-    <div class="col-xs-4">
-
-    </div>
-  </div>
-</div>
-
-
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
-

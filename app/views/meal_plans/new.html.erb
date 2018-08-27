@@ -15,6 +15,10 @@
   <% end %>
 </div>
 
+<div class="sidebar">
+  <%= render "meal_plan", meals: @meals %>
+</div>
+
 <div class="row" id="js-nutritionist-meals">
   <%= render "nutritionist_meals", nutritionist: @nutritionist %>
 </div>

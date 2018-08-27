@@ -1,6 +1,7 @@
 .image-meal {
-  height: 150px;
-  width: 80px;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
 }
 
 .tab {
@@ -18,4 +19,9 @@
 
 .tab-nutritionist:hover {
   text-decoration: none;
+}
+
+.meal-name {
+  font-size: 18px;
+  opacity: 0.8;
 }

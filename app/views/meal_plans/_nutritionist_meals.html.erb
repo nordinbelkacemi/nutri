@@ -1,19 +1,18 @@
-<div class="container">
-  <% if nutritionist.meals.nil? %>
-    <%= "Sorry bud..." %>
-  <% else %>
-    <% nutritionist.meals.each do |meal| %>
-      <div class='col-xs-12 col-sm-6 col-md-3 text-center'>
-        <div class='nutritionist-meal-card margin-top-20 margin-bottom-20' data-meal-id="<%= meal.id %>">
-            <%= cl_image_tag meal.photo, width: 1000, height:750, crop: :fill, class: 'image-meal' %>
-          <div class='name-meal margin-top-5 margin-bottom-5'>
-            <%= meal.name %>
-          </div>
-          <div class="<%= meal.type.downcase %> meal-type">
-            <%= meal.type %>
-          </div>
+
+<% if nutritionist.meals.nil? %>
+  <%= "Sorry bud..." %>
+<% else %>
+  <% nutritionist.meals.each do |meal| %>
+    <!-- <div class='col-xs-12 col-sm-6 col-md-3 text-center'> -->
+      <div class='nutritionist-meal-card' data-meal-id="<%= meal.id %>">
+          <%= cl_image_tag meal.photo, crop: :fill, class: 'image-meal' %>
+        <div class='name-meal'>
+          <%= meal.name %>
+        </div>
+        <div class="<%= meal.type.downcase %> meal-type">
+          <%= meal.type %>
         </div>
       </div>
-    <% end %>
+    <!-- </div> -->
   <% end %>
-</div>
+<% end %>

@@ -1,5 +1,10 @@
-<form class="meal-planner">
+
+<%= form_tag(meal_plans_path, method: "post") %>
+  <%= hidden_field_tag(:meal_id, "45") %>
+<% end %>
+<!-- <form class="meal-planner" action="/meal_plans" method="post" >
   <input type="text">
+  <input type="hidden" value='45'>
   <% if meals.nil? %>
     <%= "Add meals by clicking on them!" %>
   <% else %>
@@ -7,4 +12,5 @@
       <input type="hidden" value="<%= meal.name %>">
     <% end %>
   <% end %>
-</form>
+  <input type="submit">
+</form> -->

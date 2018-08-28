@@ -21,4 +21,8 @@ class MealPlansController < ApplicationController
       @calories << meal.calories
     end
   end
+
+  def create
+    @meal_plan = MealPlan.new()
+  end
 end

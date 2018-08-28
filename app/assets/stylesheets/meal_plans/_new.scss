@@ -1,7 +1,5 @@
 .image-meal {
-  height: 100%;
-  width: 100%;
-  border-radius: 5px;
+  width: 200px;
 }
 
 .tab {
@@ -36,4 +34,24 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+
+.meal-selection-image {
+  width: 20%;
+  height: 20%;
+}
+
+.nutritionist-meal-card{
+  width: 200px;
+    margin: 10px;
+}
+
+#js-nutritionist-meals{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 80%;
+}
+.flex-std{
+  display: flex;
 }

@@ -15,10 +15,12 @@
   <% end %>
 </div>
 
-<div class="meal-plan-planner">
-  <%= render "meal_plan", meals: @meals %>
-</div>
+<div class="flex-std">
+  <div id="js-nutritionist-meals">
+    <%= render "nutritionist_meals", nutritionist: @nutritionist %>
+  </div>
 
-<div class="row" id="js-nutritionist-meals">
-  <%= render "nutritionist_meals", nutritionist: @nutritionist %>
+  <div class="meal-plan-planner">
+    <%= render "meal_plan", meals: @meals %>
+  </div>
 </div>

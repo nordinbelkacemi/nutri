@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2018_08_22_231656) do
 
   create_table "meals", force: :cascade do |t|
     t.string "name"
+    t.text "description"
     t.text "recipe"
     t.string "type"
     t.integer "calories"

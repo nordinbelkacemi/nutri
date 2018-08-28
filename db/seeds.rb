@@ -228,10 +228,20 @@ B_INGREDIENTS.each do |ingredient|
     )
   end
 
-2.times do |i|
-  celine_meal_plan = MealPlan.create!(user: User.first, name: "Celine's meal plan")
+puts "creating meal plans ;)"
+
+celine_meal_plan = MealPlan.create!(user: User.first, name: "Yoga Day")
+3.times do |i|
   MealPlanMeal.create!(meal: Meal.all.sample, meal_plan: celine_meal_plan)
+end
+
+  celine_meal_plan = MealPlan.create!(user: User.first, name: "Workout Day")
+3.times do |i|
   MealPlanMeal.create!(meal: Meal.all.sample, meal_plan: celine_meal_plan)
+end
+
+  celine_meal_plan = MealPlan.create!(user: User.first, name: "Rest Day")
+3.times do |i|
   MealPlanMeal.create!(meal: Meal.all.sample, meal_plan: celine_meal_plan)
 end
 
@@ -259,6 +269,9 @@ Meal.create!(
   type: "Lunch",
   remote_photo_url: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=67fb2e7b1fbe39b18b51146234ef38aa&auto=format&fit=crop&w=1500&q=80",
 )
+
+
+
 
 # puts "  breakfast..."
 # 5.times do |i|

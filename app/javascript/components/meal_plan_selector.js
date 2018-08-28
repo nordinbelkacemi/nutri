@@ -1,4 +1,4 @@
-const meal_plan = document.querySelector(".meal-plan")
+const meal_plan = document.querySelector(".meal-planner")
 
 function addToForm(meal) {
   const insertion = "<input type='hidden' class='meal-" + meal.dataset.mealId + "' value='" + meal.dataset.mealId + "'>";

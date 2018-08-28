@@ -186,8 +186,6 @@ Meal.create!(
   remote_photo_url: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=67fb2e7b1fbe39b18b51146234ef38aa&auto=format&fit=crop&w=1500&q=80",
 )
 
-
-
 # puts "  breakfast..."
 # 5.times do |i|
 #   Meal.create!(

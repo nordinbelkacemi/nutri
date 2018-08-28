@@ -15,10 +15,14 @@
   <% end %>
 </div>
 
-<div class="sidebar">
+<div class="meal-plan-planner">
   <%= render "meal_plan", meals: @meals %>
 </div>
 
 <div class="row" id="js-nutritionist-meals">
   <%= render "nutritionist_meals", nutritionist: @nutritionist %>
+</div>
+
+<div class="selection-meal-id">
+  <input type="hidden" value="">
 </div>

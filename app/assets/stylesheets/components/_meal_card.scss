@@ -1,3 +1,23 @@
+.meal-card {
+  height: 265px;
+  border-radius: 5px;
+  background-color: white;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+}
+
+.meal-card:hover {
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  transform: scale(1.05);
+}
+.meal-card-bottom {
+  padding: 10px;
+}
+
+.meal-card-name {
+  text-align: left;
+}
+
 .meal-card-photo {
   width: 100%;
   border-radius: 5px;
@@ -7,7 +27,6 @@
   font-size: 14px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .meal-name {
@@ -16,11 +35,14 @@
 
 .meal-card-calories {
   font-size: 12px;
+  min-width: 60px;
+  text-align: right;
 }
 
 .meal-type {
   font-family: $light-font;
   font-size: 12px;
+  text-align: left;
 }
 
 .breakfast {
@@ -44,5 +66,6 @@
   background-size: cover;
   background-position-y: 75%;
   background-repeat: no-repeat;
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }

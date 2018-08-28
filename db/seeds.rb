@@ -36,7 +36,7 @@ end
 ####### meals with api
 puts "creating meals..."
 
-request_url = "https://api.edamam.com/search?q=paleo&app_id=#{ENV['EDAMAM_APP_ID']}&app_key=#{ENV['EDAMAM_API_KEY']}&q="
+request_url = "https://api.edamam.com/search?q=salad&app_id=#{ENV['EDAMAM_APP_ID']}&app_key=#{ENV['EDAMAM_API_KEY']}&q="
 queries = ["breakfast", "lunch", "dinner", "snacks"]
 
 puts "creating breakfast..."
@@ -52,7 +52,13 @@ for i in 0...5
     type: "breakfast",
     calories: recipe["calories"].floor,
     remote_photo_url: recipe["image"],
-    recipe: "Stir together tuna, mayonnaise, green onions, red pepper, and balsamic vinegar in a bowl. Season with pepper and garlic salt, then pack the avocado halves with the tuna mixture. Garnish with reserved green onions and a dash of black pepper before serving."
+    recipe: "Stir together tuna, mayonnaise, green onions, red pepper, and balsamic vinegar in a bowl. Season with pepper and garlic salt, then pack the avocado halves with the tuna mixture. Garnish with reserved green onions and a dash of black pepper before serving.",
+    fat: recipe["totalNutrients"]["FAT"]["quantity"].floor,
+    carbs: recipe["totalNutrients"]["CHOCDF"]["quantity"].floor,
+    protein: recipe["totalNutrients"]["PROCNT"]["quantity"].floor,
+    healthLabels: recipe["healthLabels"],
+    yield: recipe["yield"]
+
   )
 
   recipe["ingredients"].each do |ingredient|
@@ -77,7 +83,12 @@ for i in 0...5
     nutritionist: Nutritionist.first,
     type: "lunch",
     calories: recipe["calories"].floor,
-    remote_photo_url: recipe["image"]
+    remote_photo_url: recipe["image"],
+    fat: recipe["totalNutrients"]["FAT"]["quantity"].floor,
+    carbs: recipe["totalNutrients"]["CHOCDF"]["quantity"].floor,
+    protein: recipe["totalNutrients"]["PROCNT"]["quantity"].floor,
+    healthLabels: recipe["healthLabels"],
+    yield: recipe["yield"]
   )
   recipe["ingredients"].each do |ingredient|
     Ingredient.create!(
@@ -101,7 +112,12 @@ for i in 0...5
     nutritionist: Nutritionist.first,
     type: "dinner",
     calories: recipe["calories"].floor,
-    remote_photo_url: recipe["image"]
+    remote_photo_url: recipe["image"],
+    fat: recipe["totalNutrients"]["FAT"]["quantity"].floor,
+    carbs: recipe["totalNutrients"]["CHOCDF"]["quantity"].floor,
+    protein: recipe["totalNutrients"]["PROCNT"]["quantity"].floor,
+    healthLabels: recipe["healthLabels"],
+    yield: recipe["yield"]
   )
   recipe["ingredients"].each do |ingredient|
     Ingredient.create!(
@@ -123,7 +139,12 @@ for i in 0...5
     nutritionist: Nutritionist.first,
     type: "snack",
     calories: recipe["calories"].floor,
-    remote_photo_url: recipe["image"]
+    remote_photo_url: recipe["image"],
+    fat: recipe["totalNutrients"]["FAT"]["quantity"].floor,
+    carbs: recipe["totalNutrients"]["CHOCDF"]["quantity"].floor,
+    protein: recipe["totalNutrients"]["PROCNT"]["quantity"].floor,
+    healthLabels: recipe["healthLabels"],
+    yield: recipe["yield"]
   )
   recipe["ingredients"].each do |ingredient|
     Ingredient.create!(

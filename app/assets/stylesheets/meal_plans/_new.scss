@@ -1,0 +1,39 @@
+.image-meal {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.tab {
+  opacity: 0.5;
+}
+
+.tab-name {
+  color: black;
+  font-family: $light-font;
+}
+
+.tab:hover {
+  opacity: 1;
+}
+
+.tab-nutritionist:hover {
+  text-decoration: none;
+}
+
+.meal-name {
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+.meal-planner {
+  height: 30%;
+  position: fixed;
+  top: 140;
+  right: 0;
+  background-color: rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}

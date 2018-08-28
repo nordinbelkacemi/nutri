@@ -1,0 +1,10 @@
+<form class="meal-planner">
+  <input type="text">
+  <% if meals.nil? %>
+    <%= "Add meals by clicking on them!" %>
+  <% else %>
+    <% meals.each do |meal| %>
+      <input type="hidden" value="<%= meal.name %>">
+    <% end %>
+  <% end %>
+</form>

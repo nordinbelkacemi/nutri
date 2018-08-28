@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 5px;
 }
 
 .meal-plan-card {
@@ -10,6 +11,7 @@
   align-items: center;
   width: 300px;
   margin: 0 auto;
+  pointer-events:none;
 }
 
 .meal-plan-card:hover {
@@ -17,10 +19,18 @@
 }
 
 .frame {
-  border: 1px solid rgba(0,0,0,0.3);
-  padding: 15px;
+  padding: 25px;
   border-radius: 5px;
   width: 100%;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.meal-plan:hover {
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+.btn {
+  margin-bottom: 5%;
 }

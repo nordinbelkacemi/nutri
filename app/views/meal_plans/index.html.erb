@@ -4,10 +4,10 @@
     <% (@meal_plans + @meal_plans).each do |meal_plan| %>
     <div class="meal-plan margin-top-5 margin-bottom-5">
       <div class="meal-plan-card">
-        <div class="meal-plan-name">
-          <%= meal_plan.name %>
-        </div>
         <div class="frame">
+          <div class="meal-plan-name">
+            <%= meal_plan.name %>
+          </div>
           <% meal_plan.meals.each do |meal| %>
           <div class="meal-card margin-top-5 margin-bottom-5">
             <div class="mask" style="background-image: url('<%= cl_image_path meal.photo %>');">

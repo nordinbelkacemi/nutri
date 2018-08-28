@@ -3,9 +3,6 @@
     <h2><%= @meal.name %></h2>
   </div>
 
-  <div class="meals-header">
-    <p class="<%= @meal.type %>"><%= @meal.type %></p>
-  </div>
 
   <div>
     <ul class="health-labels">
@@ -19,6 +16,9 @@
     <div class="meals-photo">
       <%= cl_image_tag(@meal.photo, crop: :thumb, gravity: :face) %>
     </div>
+  <div class="meals-header">
+    <p class="<%= @meal.type %>"><%= @meal.type %></p>
+  </div>
 
     <div class="inline">
       <div>

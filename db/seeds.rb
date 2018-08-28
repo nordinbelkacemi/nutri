@@ -161,6 +161,32 @@ end
   MealPlanMeal.create!(meal: Meal.third, meal_plan: celine_meal_plan)
 end
 
+Subscription.create!(user: User.first, nutritionist: Nutritionist.first)
+Subscription.create!(user: User.first, nutritionist: Nutritionist.second)
+Subscription.create!(user: User.first, nutritionist: Nutritionist.third)
+
+Subscription.create!(user: User.second, nutritionist: Nutritionist.first)
+Subscription.create!(user: User.second, nutritionist: Nutritionist.second)
+Subscription.create!(user: User.second, nutritionist: Nutritionist.third)
+
+Subscription.create!(user: User.third, nutritionist: Nutritionist.first)
+Subscription.create!(user: User.third, nutritionist: Nutritionist.second)
+Subscription.create!(user: User.third, nutritionist: Nutritionist.third)
+
+Meal.create!(
+  nutritionist: Nutritionist.second,
+  name: "test meal",
+  type: "Dinner",
+  remote_photo_url: "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fb2e66d3d3bf1c413f143e9a723c5309&auto=format&fit=crop&w=668&q=80",
+)
+Meal.create!(
+  nutritionist: Nutritionist.third,
+  name: "test meal",
+  type: "Lunch",
+  remote_photo_url: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=67fb2e7b1fbe39b18b51146234ef38aa&auto=format&fit=crop&w=1500&q=80",
+)
+
+
 
 # puts "  breakfast..."
 # 5.times do |i|

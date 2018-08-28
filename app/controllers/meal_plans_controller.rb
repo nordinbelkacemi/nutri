@@ -5,6 +5,15 @@ class MealPlansController < ApplicationController
     @meal_plans = MealPlan.all
   end
 
+  def new
+    if params[:nutritionist_id].nil?
+      @nutritionist = Nutritionist.first
+    else
+      @nutritionist = Nutritionist.find(params[:nutritionist_id])
+      puts "nutritionist -> #{@nutritionist.name}"
+    end
+  end
+
   def show
     @meal_plan = MealPlan.find(params[:id])
     @calories = []
@@ -13,12 +22,3 @@ class MealPlansController < ApplicationController
     end
   end
 end
-
-
-
-
-
-
-
-
-

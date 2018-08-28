@@ -1,72 +1,111 @@
-<div class="banner-show" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 50%), url('https://images.unsplash.com/photo-1529592411653-00d59de9c738?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5a3baf0a88056748234ea5a57a1ba42c&auto=format&fit=crop&w=1950&q=80');">
-</div>
-
-<div class="header">
-  <h4 class="grey">Vegan</h4>
-  <p class="<%= @meal.type %>"><%= @meal.type %></p>
-</div>
-
-<div class="title-and-suggestions">
-  <div class="row">
-    <div class="col-xs-12 col-md-6 header">
-        <h1><%= @meal.name %></h1>
-
-      <div class="inline">
-        <div>
-          <%= link_to nutritionist_path(@meal.nutritionist) do %>
-          <%= cl_image_tag(@meal.nutritionist.photo, crop: :thumb, gravity: :face, class: "avatar-show") %>
-          <% end %>
-        </div>
-        <div>
-          <p class="grey">By: <strong><%= @meal.nutritionist.name %></strong>, dietician</p>
-          <p class="grey">August 24th 2018</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-xs-12 col-md-5">
-      <p class="grey">Other recipes you may like</p>
-      <div class="container meal-container">
-        <div class="row">
-          <% @suggestions.each do |meal| %>
-          <div class="col-xs-4">
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= meal.photo %>');">
-            </div>
-            <p><%= meal.name %></p>
-          </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
+<div class="meals-container">
+  <div class="meal-title">
+    <h2><%= @meal.name %></h2>
   </div>
-</div>
 
-<div class="meal-container">
-  <div class="row">
-    <div class="col-xs-6 margin-left-5">
 
-      <h4>Ingredients</h4>
+  <div>
+    <ul class="health-labels">
+    <% @meal.health_labels.each do |label| %>
+      <li> <%= label %> | </li>
+    <% end %>
+    </ul>
+  </div>
 
+  <div class="meal-frame">
+    <div class="meals-photo">
+      <%= cl_image_tag(@meal.photo, crop: :thumb, gravity: :face) %>
+    </div>
+  <div class="meals-header">
+    <p class="<%= @meal.type %>"><%= @meal.type %></p>
+  </div>
+
+    <div class="inline">
       <div>
-        <ul class="list-group list-group-flush">
-          <% @ingredients.each do |ingredient| %>
-            <li class="list-group-item"><%= ingredient.name %></li>
-          <% end %>
-        </ul>
+        <%= link_to nutritionist_path(@meal.nutritionist) do %>
+        <%= cl_image_tag(@meal.nutritionist.photo, crop: :thumb, gravity: :face, class: "avatar-show") %>
+        <% end %>
+      </div>
+      <div>
+        <p class="grey">By: <strong><%= @meal.nutritionist.name %></strong>, dietician</p>
+        <p class="nutritionist-bio"><%= @meal.nutritionist.bio %></p>
       </div>
     </div>
+  </div>
 
+  <div class="meal-frame">
+    <div class="meals-description">
+      <h4>Description</h4>
+      <p><%= @meal.description%></p>
+    </div>
 
-    <div class="col-xs-4">
-      <div class="header">
-        <h4>Recipe</h4>
-        <p><%= @meal.recipe %></p>
+    <div class="inline-icons">
+      <i class="far fa-clock fa-2x"></i>
+      <p class="subtext">20 min</p>
+      <i class="fas fa-utensils fa-2x"></i>
+      <p class="subtext">Serves <%= @meal.yield %></p>
+    </div>
+  </div>
+
+  <div class="meals-header">
+    <h4>Macronutrients</h4>
+  </div>
+
+  <div class="chart">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Macronutrient', 'Weight/g'],
+          ['Protein', <%= @meal.protein %>],
+          ['Carbohydrate', <%= @meal.carbs %>],
+          ['Fat', <%= @meal.fat %>]
+        ]);
+
+        var options = {
+          title: '',
+          pieHole: 0.6,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
+
+    <div id="donutchart" style="width: 600px; height: 400px;"></div>
+  </div>
+
+  <div class="meals-header">
+    <h4>Ingredients</h4>
+  </div>
+  <div>
+    <ul class="ingredients">
+      <% @ingredients.each do |ingredient| %>
+        <li><%= ingredient.name %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="meal-recipe">
+    <h4>Recipe</h4>
+    <p><%= @meal.recipe %></p>
+    <p><%= @meal.recipe %></p>
+  </div>
+
+  <div class="col-xs-12 col-md-5">
+    <p class="grey">Other recipes you may like</p>
+    <div class="container meal-container">
+      <div class="row">
+        <% @suggestions.each do |meal| %>
+        <div class="col-xs-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= meal.photo %>');">
+          </div>
+          <p><%= meal.name %></p>
+        </div>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
-
-
-
-
-

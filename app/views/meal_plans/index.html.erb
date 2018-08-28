@@ -1,5 +1,5 @@
 <div class="container text-center">
-  <div class="btn btn-primary">New Meal Plan +</div>
+  <%= link_to "New Meal Plan", new_meal_plan_path, class: "btn btn-primary" %>
   <div id="meal-carousel">
     <% (@meal_plans + @meal_plans).each do |meal_plan| %>
     <div class="meal-plan margin-top-5 margin-bottom-5">
@@ -27,11 +27,10 @@
             </div>
           </div>
         <% end %>
+        <div class="btn btn-success frame">Edit</div>
         </div>
     </div>
   </div>
   <% end %>
   </div>
 </div>
-
-

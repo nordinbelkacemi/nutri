@@ -5,5 +5,10 @@ class Meal < ApplicationRecord
   self.inheritance_column = :_type_disabled
 
   mount_uploader :photo, PhotoUploader
+
+  def health_labels
+    JSON.parse(self.healthLabels)
+  end
 end
+
 

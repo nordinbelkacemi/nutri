@@ -53,11 +53,17 @@ ActiveRecord::Schema.define(version: 2018_08_22_231656) do
 
   create_table "meals", force: :cascade do |t|
     t.string "name"
+    t.text "description"
     t.text "recipe"
     t.string "type"
     t.integer "calories"
     t.bigint "nutritionist_id"
     t.string "photo"
+    t.string "healthLabels"
+    t.string "carbs"
+    t.string "fat"
+    t.string "protein"
+    t.integer "yield"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["nutritionist_id"], name: "index_meals_on_nutritionist_id"

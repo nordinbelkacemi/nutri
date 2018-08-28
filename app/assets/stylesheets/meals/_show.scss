@@ -1,9 +1,68 @@
+.meal-title{
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
 
-.banner-show {
-  position: relative;
-  height: 60vh;
-  width: 100%;
-  color: white;
+.meals-header {
+  margin-bottom: 10px;
+}
+
+.health-labels {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin-left: none;
+}
+
+.health-labels > li {
+  padding-left: 10px;
+}
+
+.meals-photo {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  width: 300px
+}
+
+.meals-photo > img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.meals-description {
+  margin: 5% 5%;
+
+}
+
+.chart {
+  margin: none;
+}
+
+.subtext {
+  margin-left: 10px;
+  margin-right: 30px;
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.ingredients {
+  border-left: 4px solid #5A5A5A;
+  list-style-type: none;
+  padding-left: 10px;
+  font-family: $italic-font;
+  margin-bottom: 50px;
+
+}
+
+.margin-left {
+  margin-left: 10%;
+}
+
+.meal-recipe {
+  width: 40%;
+  margin-bottom: 10%;
 }
 
 .avatar-show {
@@ -13,16 +72,36 @@
   border: 1px solid white;
 }
 
-.header {
-  margin-left: 5%;
-  margin-top: 20px;
-}
+
 
 .meal-container {
   position: relative;
   width: 100%;
   margin-top: 30px;
   margin-left: 5%;
+}
+
+.meals-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin-top: 1px;
+}
+
+.meal-frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(0,0,0,0.3);
+  padding: 15px;
+  border-radius: 5px;
+  width: 33%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  margin-bottom: 5%;
 }
 
 .follow-button {
@@ -49,6 +128,12 @@
 
 }
 
+.inline-icons {
+  display: flex;
+  align-items: center;
+
+}
+
 .grey {
   color:#6D6D6D;
 }
@@ -69,6 +154,7 @@
   margin: 0 !important;
   padding: 0 !important;
 }
+
 .card {
   height: 100px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
@@ -76,4 +162,19 @@
   background-position: center;
   color: white;
   position: relative;
+}
+
+
+.banner-show {
+  position: relative;
+  height: 60vh;
+  width: 100%;
+  color: white;
+}
+
+.nutritionist-bio {
+  font-weight: lighter;
+  font-family: $italic-font;
+  color: #5A5A5A;
+  margin-top: 10px;
 }

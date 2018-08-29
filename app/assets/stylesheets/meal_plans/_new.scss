@@ -6,6 +6,10 @@
   opacity: 0.5;
 }
 
+.nutritionist-tabs {
+ margin-bottom: 5%;
+}
+
 .tab-name {
   color: black;
   font-family: $light-font;
@@ -13,10 +17,17 @@
 
 .tab:hover {
   opacity: 1;
+  padding-bottom: 12px;
 }
 
 .tab-nutritionist:hover {
   text-decoration: none;
+}
+
+.active > .tab {
+  opacity: 1;
+  padding-bottom: 12px;
+  border-bottom: 2px solid black;
 }
 
 .meal-name {
@@ -55,3 +66,7 @@
 .flex-std{
   display: flex;
 }
+
+ a {
+  text-decoration: none !important;
+ }

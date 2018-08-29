@@ -1,16 +1,29 @@
-<div class="tabs margin-top-2">
+<div class="nutritionist-tabs margin-top-2">
   <% if current_user.nutritionists.nil? %>
-    <%= "Sorry bud" %>
+    <%= "No nutritionists" %>
   <% else %>
-    <% current_user.nutritionists.each do |nutritionist| %>
-      <%= link_to new_meal_plan_path(nutritionist_id: nutritionist.id), remote: true, class: "tab-nutritionist" do %>
-        <span class="tab">
-          <%= cl_image_tag(nutritionist.photo, width: 200, height: 200, crop: :thumb, gravity: :face, class: "avatar-small margin-left-2 margin-rigth-2") %>
-          <span class="tab-name margin-right-2">
-            <%= nutritionist.name.split(" ").last %>
-          </span>
-        </span>
+    <% current_user.nutritionists.each_with_index do |nutritionist, val| %>
+      <% if val == 0 %>
+        <%= link_to new_meal_plan_path(nutritionist_id: nutritionist.id), remote: true, id: "nutri-#{nutritionist.id}", class: "active tab-nutritionist" do %>
+            <span class="tab">
+              <%= cl_image_tag(nutritionist.photo, width: 200, height: 200, crop: :thumb, gravity: :face, class: "avatar-small margin-left-2 margin-rigth-2") %>
+              <span class="tab-name margin-right-2">
+                <%= nutritionist.name.split(" ").last %>
+              </span>
+            </span>
+          <% end %>
+      <% else %>
+        <%= link_to new_meal_plan_path(nutritionist_id: nutritionist.id), remote: true, id: "nutri-#{nutritionist.id}" ,class: "tab-nutritionist" do %>
+            <span class="tab">
+              <%= cl_image_tag(nutritionist.photo, width: 200, height: 200, crop: :thumb, gravity: :face, class: "avatar-small margin-left-2 margin-rigth-2") %>
+              <span class="tab-name margin-right-2">
+                <%= nutritionist.name.split(" ").last %>
+              </span>
+            </span>
+          <% end %>
       <% end %>
+
+
     <% end %>
   <% end %>
 </div>

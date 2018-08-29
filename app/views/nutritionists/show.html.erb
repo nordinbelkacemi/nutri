@@ -8,11 +8,8 @@
         <p><%= @nutritionist.bio %></p>
       </h6>
     </div>
-
-    <%= link_to '#', class: "follow" do %>
-      Follow
-    <% end %>
-  </div>
+     <%= link_to 'Follow', subscriptions_path(nutritionist_id: @nutritionist), method: :post, remote: 'true', class: "follow" %>
+      </div>
   <div class="row">
   <% @nutritionist.meals.each do |meal| %>
     <div class="col-xs-12 col-sm-6 col-md-4 text-center">

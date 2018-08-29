@@ -76,14 +76,21 @@
 }
 
 .calories {
+  font-family: $light-font;
+  color: rgba(0,0,0,0.5);
+  font-size: 16px;
+  position: absolute;
+  bottom: 20px;
   width: 100%;
 }
 
 .nutritionist-meal-card {
+  height: 250px;
   margin: 0;
-  padding: 15px;
+  padding: 5px;
   border: 2px solid rgba(0,0,0,0);
   border-radius: 5px;
+  position: relative;
 }
 
 .nutritionist-meal-card:hover {

@@ -1,10 +1,6 @@
-<form class="meal-planner">
-  <input type="text">
-  <% if meals.nil? %>
-    <%= "Add meals by clicking on them!" %>
-  <% else %>
-    <% meals.each do |meal| %>
-      <input type="hidden" value="<%= meal.name %>">
-    <% end %>
-  <% end %>
-</form>
+<%= form_tag(meal_plans_path, method: "post", class: "meal-planner") do %>
+  <%= text_field_tag(:meal_plan_name) %>
+  <div class="meal-selections">
+  </div>
+  <%= submit_tag %>
+<% end %>

@@ -2,8 +2,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.js";
 
-const meals = $("#meal-carousel");
-meals.slick({
+const mealPlans = $("#meal-carousel");
+
+mealPlans.slick({
   dots: true,
   infinite: true,
   speed: 500,

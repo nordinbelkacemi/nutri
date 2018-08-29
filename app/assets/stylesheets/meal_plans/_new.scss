@@ -1,11 +1,15 @@
 .image-meal {
-  height: 100%;
+  height: 100px;
   width: 100%;
   border-radius: 5px;
 }
 
 .tab {
   opacity: 0.5;
+}
+
+.nutritionist-tabs {
+ margin-bottom: 5%;
 }
 
 .tab-name {
@@ -15,10 +19,17 @@
 
 .tab:hover {
   opacity: 1;
+  padding-bottom: 12px;
 }
 
 .tab-nutritionist:hover {
   text-decoration: none;
+}
+
+.active > .tab {
+  opacity: 1;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #8DC088;
 }
 
 .meal-name {
@@ -27,6 +38,7 @@
 }
 
 .meal-planner {
+  width: 40%;
   height: 30%;
   position: fixed;
   top: 140;
@@ -36,4 +48,73 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+
+.meal-selection-image {
+  width: 20%;
+  height: 20%;
+}
+
+.nutritionist-meal-card {
+  width: 200px;
+    margin: 10px;
+}
+
+#js-nutritionist-meals {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.flex-std {
+  display: flex;
+}
+
+.name-meal {
+  font-family: $light-font;
+  padding: 10px 0px;
+}
+
+.calories {
+  font-family: $light-font;
+  color: rgba(0,0,0,0.5);
+  font-size: 16px;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+}
+
+.nutritionist-meal-card {
+  height: 250px;
+  margin: 0;
+  padding: 5px;
+  border: 2px solid rgba(0,0,0,0);
+  border-radius: 5px;
+  position: relative;
+}
+
+.nutritionist-meal-card:hover {
+  box-shadow: 0px 0px 20px #8DC088;
+  border: 2px solid #8DC088;
+  cursor: pointer;
+}
+
+.selected {
+  border: 2px solid rgba(0,0,0,0);
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px #8DC088;
+  border: 2px solid #8DC088;
+}
+
+a {
+ text-decoration: none !important;
+}
+
+a:hover {
+ text-decoration: none !important;
+}
+
+#js-nutritionist-meals {
+  width: 60%;
 }

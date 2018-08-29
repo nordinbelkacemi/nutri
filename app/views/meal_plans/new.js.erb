@@ -1,3 +1,36 @@
-var meals = document.getElementById("js-nutritionist-meals")
+var meals = document.querySelector("#js-nutritionist-meals")
 
 meals.innerHTML = '<%= j render "nutritionist_meals", nutritionist: @nutritionist %>'
+
+selections = document.querySelectorAll(".selection");
+currentSelectionsIds = [];
+
+selections.forEach(function (selection) {
+  const mealId = selection.classList[1].replace("meal-selection-", "")
+  const mealElement =  document.querySelector("[data-meal-id = '" + mealId + "']");
+
+  if (mealElement != null){
+    mealElement.classList.add("selected");
+  }
+});
+
+window.initMealPlanSelectorLogic();
+
+//var nutritionistTab = getELementByClassName("tab");
+
+// for (var i = 0; i < nutritionistTab.length; i++ ) {
+//   nutritionistTab[i].addEventListener("click", function () {
+//     var current = document.getELementByClassName("tab");
+//     current[0].className = current[0].className.replace(" active", "");
+//     this.className += " active";
+//   });
+ tabSelections = document.querySelectorAll(".tab-nutritionist")
+
+  tabSelections.forEach((tabSelection, index) => {
+    tabSelection.classList.remove("active");
+  });
+
+  document.querySelector('#nutri-' + <%= @nutritionist.id %>).classList.add('active');
+
+
+

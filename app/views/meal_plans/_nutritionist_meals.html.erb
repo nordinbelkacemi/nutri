@@ -3,16 +3,17 @@
   <%= "Sorry bud..." %>
 <% else %>
   <% nutritionist.meals.each do |meal| %>
-    <!-- <div class='col-xs-12 col-sm-6 col-md-3 text-center'> -->
-      <div class='nutritionist-meal-card' data-meal-id="<%= meal.id %>">
-          <%= cl_image_tag meal.photo, crop: :fill, class: 'image-meal' %>
-        <div class='name-meal'>
-          <%= meal.name %>
-        </div>
-        <div class="<%= meal.type.downcase %> meal-type">
-          <%= meal.type %>
-        </div>
+    <div class='nutritionist-meal-card' data-meal-id="<%= meal.id %>">
+      <%= cl_image_tag meal.photo, crop: :fill, class: 'image-meal' %>
+      <div class='name-meal'>
+        <%= truncate(meal.name, length: 35, separator: ' ') %>
       </div>
-    <!-- </div> -->
+      <div class="<%= meal.type.downcase %> meal-type">
+        <%= meal.type %>
+      </div>
+      <div class="calories text-center">
+        <%= "#{meal.calories} cal" %>
+      </div>
+    </div>
   <% end %>
 <% end %>

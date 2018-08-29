@@ -7,6 +7,10 @@
   opacity: 0.5;
 }
 
+.nutritionist-tabs {
+ margin-bottom: 5%;
+}
+
 .tab-name {
   color: black;
   font-family: $light-font;
@@ -14,10 +18,17 @@
 
 .tab:hover {
   opacity: 1;
+  padding-bottom: 12px;
 }
 
 .tab-nutritionist:hover {
   text-decoration: none;
+}
+
+.active > .tab {
+  opacity: 1;
+  padding-bottom: 12px;
+  border-bottom: 2px solid black;
 }
 
 .meal-name {
@@ -76,4 +87,8 @@
 .nutritionist-meal-card:hover {
   box-shadow: 0px 0px 20px #8DC088;
   border: 1px solid #8DC088;
+}
+
+a {
+ text-decoration: none !important;
 }

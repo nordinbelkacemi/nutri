@@ -1,8 +1,21 @@
 const meal_plan = document.querySelector(".meal-planner")
 
+meal_plan.addEventListener("submit", (event) => {
+  const mealSelections = document.querySelectorAll(".meal-planner .selection");
+  const mealTypes = ["breakfast", "lunch", "dinner"];
+
+  mealSelections.forEach((mealSelection, index) => {
+    mealSelection.lastElementChild.setAttribute("name", mealTypes[index]);
+  });
+});
+
 function addToForm(meal) {
-  const insertion = "<div class='selection meal-selection-" + meal.dataset.mealId + "'><img width='1000px' height='750px' class='meal-selection-image' src='" + meal.children[0].src + "'></div>"
-  
+  const insertion =
+  "<div class='selection meal-selection-" + meal.dataset.mealId + "'>" +
+    "<img width='1000px' height='750px' class='meal-selection-image' src='" + meal.children[0].src + "'>" +
+    `<input type='hidden' value='${meal.dataset.mealId}'>` +
+  "</div>";
+
   meal_plan.innerHTML += insertion;
   sessionStorage.setItem(meal.dataset.mealId, "true");
   console.log(sessionStorage);
@@ -33,8 +46,5 @@ function initMealPlanSelectorLogic() {
      });
   });
 }
-
-let selections = [];
-let currentSelectionsIds = [];
 
 export { initMealPlanSelectorLogic };

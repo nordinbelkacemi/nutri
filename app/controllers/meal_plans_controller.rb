@@ -23,6 +23,7 @@ class MealPlansController < ApplicationController
   end
 
   def create
+    
     @meal_plan = MealPlan.new()
   end
 end

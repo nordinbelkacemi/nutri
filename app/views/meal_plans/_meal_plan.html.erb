@@ -1,16 +1,5 @@
 
-<%= form_tag(meal_plans_path, method: "post") %>
-  <%= hidden_field_tag(:meal_id, "45") %>
+<%= form_tag(meal_plans_path, method: "post", class: "meal-planner") do %>
+  <%= text_field_tag(:meal_plan_name) %>
+  <%= submit_tag %>
 <% end %>
-<!-- <form class="meal-planner" action="/meal_plans" method="post" >
-  <input type="text">
-  <input type="hidden" value='45'>
-  <% if meals.nil? %>
-    <%= "Add meals by clicking on them!" %>
-  <% else %>
-    <% meals.each do |meal| %>
-      <input type="hidden" value="<%= meal.name %>">
-    <% end %>
-  <% end %>
-  <input type="submit">
-</form> -->

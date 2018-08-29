@@ -1,4 +1,8 @@
 .meal-card {
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   height: 265px;
   border-radius: 5px;
   background-color: white;
@@ -10,12 +14,15 @@
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
   transform: scale(1.05);
 }
-.meal-card-bottom {
-  padding: 10px;
-}
 
 .meal-card-name {
-  text-align: left;
+  color: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: 20px;
+  flex: 1;
 }
 
 .meal-card-photo {
@@ -23,45 +30,60 @@
   border-radius: 5px;
 }
 
-.meal-card-bottom-text {
-  font-size: 14px;
+.meal-card-labels {
+  color: rgba(0,0,0,0.6);
+  padding: 26px 0 0 0;
+  font-size: 12px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
+
 }
 
 .meal-name {
-  font-size: 14px
+  font-size: 14px;
 }
 
 .meal-card-calories {
-  font-size: 12px;
-  min-width: 60px;
-  text-align: right;
+  display: flex;
+  align-items: center;
+  p{
+    margin: 0;
+    padding-left: 7px;
+  }
 }
 
 .meal-type {
+  padding: 0 20px;
+  position: absolute;
+  bottom: -10px;
+  right: 30px;
+  color: white;
+  border-radius: 30px;
+  text-transform: uppercase;
+  font-size: 14px;
   font-family: $light-font;
-  font-size: 12px;
   text-align: left;
 }
 
 .breakfast {
-  color: #8DC088;
+  background-color: #8DC088;
 }
 
 .lunch {
-  color: #517CE8;
+  background-color: #517CE8;
 }
 
 .dinner {
-  color: #D75656;
+  background-color: #D75656;
 }
 
 .snack {
-  color: #F5A444
+  background-color: #F5A444
 }
 
 .mask {
+  position: relative;
   height: 154px;
   background-size: cover;
   background-position-y: 75%;

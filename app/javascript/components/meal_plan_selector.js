@@ -1,4 +1,5 @@
 const meal_plan = document.querySelector(".meal-planner")
+const mealSelectionsInForm = document.querySelector(".meal-selections")
 
 if (meal_plan) {
   meal_plan.addEventListener("submit", (event) => {
@@ -18,7 +19,7 @@ function addToForm(meal) {
     `<input type='hidden' value='${meal.dataset.mealId}'>` +
   "</div>";
 
-  meal_plan.innerHTML += insertion;
+  mealSelectionsInForm.innerHTML += insertion;
   sessionStorage.setItem(meal.dataset.mealId, "true");
   console.log(sessionStorage);
 }

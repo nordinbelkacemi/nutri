@@ -1,13 +1,15 @@
 const meal_plan = document.querySelector(".meal-planner")
 
-meal_plan.addEventListener("submit", (event) => {
-  const mealSelections = document.querySelectorAll(".meal-planner .selection");
-  const mealTypes = ["breakfast", "lunch", "dinner"];
+if (meal_plan) {
+  meal_plan.addEventListener("submit", (event) => {
+    const mealSelections = document.querySelectorAll(".meal-planner .selection");
+    const mealTypes = ["breakfast", "lunch", "dinner"];
 
-  mealSelections.forEach((mealSelection, index) => {
-    mealSelection.lastElementChild.setAttribute("name", mealTypes[index]);
+    mealSelections.forEach((mealSelection, index) => {
+      mealSelection.lastElementChild.setAttribute("name", mealTypes[index]);
+    });
   });
-});
+}
 
 function addToForm(meal) {
   const insertion =

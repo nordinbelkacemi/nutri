@@ -5,8 +5,8 @@
     <div class="meal-plan margin-top-5 margin-bottom-5">
       <div class="meal-plan-card">
         <div class="frame">
-          <div class="meal-plan-name">
-            <%= meal_plan.name %>
+          <div class="meal-plan-name" >
+            <h4><%= meal_plan.name %></h4>
           </div>
           <% meal_plan.meals.each do |meal| %>
           <div class="meal-card margin-top-5 margin-bottom-5">
@@ -22,12 +22,11 @@
                 </div>
               </div>
               <div class="meal-card-name">
-                <%= truncate(meal.name, length: 70, separator: ' ') %>
+                <%= truncate(meal.name, length: 25, separator: ' ') %>
               </div>
             </div>
           </div>
         <% end %>
-        <div class="btn btn-success frame">Edit</div>
         </div>
     </div>
   </div>

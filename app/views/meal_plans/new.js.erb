@@ -1,3 +1,17 @@
-var meals = document.getElementById("js-nutritionist-meals")
+var meals = document.querySelector("#js-nutritionist-meals")
 
 meals.innerHTML = '<%= j render "nutritionist_meals", nutritionist: @nutritionist %>'
+
+selections = document.querySelectorAll(".selection");
+currentSelectionsIds = [];
+
+selections.forEach(function (selection) {
+  const mealId = selection.classList[1].replace("meal-selection-", "")
+  const mealElement =  document.querySelector("[data-meal-id = '" + mealId + "']");
+
+  if (mealElement != null){
+    mealElement.classList.add("selected");
+  }
+});
+
+window.initMealPlanSelectorLogic();

@@ -14,27 +14,33 @@
   <% @nutritionist.meals.each do |meal| %>
     <div class="col-xs-12 col-sm-6 col-md-4 text-center">
     <!-- <div class="col-xs-12 col-sm-6 col-md-3 text-center margin-bottom-2 margin-left-2 margin-right-2"> -->
-      <div class="meal-card margin-top-5 margin-bottom-5">
-        <%= link_to nutritionist_meal_path(@nutritionist, meal) do %>
+      <%= link_to nutritionist_meal_path(@nutritionist, meal) do %>
+        <div class="meal-card">
           <div class="mask" style="background-image: url('<%= cl_image_path meal.photo %>');">
-          </div>
-        <% end %>
-
-        <div class="meal-card-bottom">
-          <div class="meal-card-bottom-text">
             <div class="<%= meal.type.downcase %> meal-type">
               <%= meal.type %>
             </div>
+          </div>
+          <div class="meal-card-labels">
             <div class="meal-card-calories">
-              <%= "#{meal.calories} cal"%>
+              <i class="far fa-clock"></i>
+              <p><%= "#{meal.calories} cal"%></p>
+            </div>
+            <div class="meal-card-calories">
+              <i class="fas fa-fire"></i>
+              <p><%= "#{meal.calories} cal"%></p>
+            </div>
+            <div class="meal-card-calories">
+              <i class="fas fa-utensils"></i>
+              <p><%= meal.yield %></p>
             </div>
           </div>
 
           <div class="meal-card-name">
-            <%= truncate(meal.name, length: 70, separator: ' ') %>
+            <%= truncate(meal.name, length: 40, separator: ' ') %>
           </div>
         </div>
-      </div>
+      <% end %>
     </div>
   <% end %>
 </div>

@@ -38,6 +38,7 @@
 }
 
 .meal-planner {
+  width: 40%;
   height: 30%;
   position: fixed;
   top: 140;
@@ -108,4 +109,12 @@
 
 a {
  text-decoration: none !important;
+}
+
+a:hover {
+ text-decoration: none !important;
+}
+
+#js-nutritionist-meals {
+  width: 60%;
 }

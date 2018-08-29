@@ -1,10 +1,17 @@
 // Import Google fonts
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900');
+
+
+$italic-font: 'Source Sans Pro', sans-serif;
+$light-font: 'Source Sans Pro', sans-serif;
+$medium-font: 'Source Sans Pro', sans-serif;
+$bold-font: 'Source Sans Pro', sans-serif;
 
 // Define fonts for body and headers
-$italic-font: "interUI-italic";
-$light-font: "interUI-light";
-$medium-font: "interUI-medium";
-$bold-font: "interUI-bold";
+// $italic-font: "interUI-italic";
+// $light-font: "interUI-light";
+// $medium-font: "interUI-medium";
+// $bold-font: "interUI-bold";
 // $thicc-font: "interUI-thicc";
 
 // To use a font file (.woff) uncomment following lines

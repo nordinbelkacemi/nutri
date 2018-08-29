@@ -1,19 +1,26 @@
 .image-nutritionist {
-  max-height: 200px;
-  width: auto;
+  width: 100%;
   height: auto;
-  border-radius: 5px;
+  border-radius: 4px 4px 0 0;
 }
 
 .name-nutritionist {
   font-family: $medium-font;
   font-size: 18px;
+  text-decoration: none;
+  padding: 20px;
 }
 
 .specialty-tag {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 4px 0 4px 0;
   font-family: $light-font;
-  border-radius: 5px;
-  font-size: 14px;
+  font-size: 12px;
   padding: 0;
   display: inline-block;
   padding: 2px 10px;
@@ -21,31 +28,46 @@
 
 .sports {
   border: 2px solid #2E50A8;
-  color: #2E50A8;
+  background-color: #2E50A8;
 }
 
 .pediatric {
   border: 2px solid #BC7AD8;
-  color: #BC7AD8;
+  background-color: #BC7AD8;
 }
 
 .general {
   border: 2px solid #C87070;
-  color: #C87070;
+  background-color: #C87070;
 }
 
 .maternal-health {
   border: 2px solid #DCD86F;
-  color: #DCD86F;
+  background-color: #DCD86F;
 }
 
 .modelling {
   border: 2px solid #0F9889;
-  color: #0F9889;
+  background-color: #0F9889;
 }
 
 .form-control {
   width: 500px;
   height: 40px;
   border-radius: 20px;
+}
+
+.nutritionist-card {
+  text-decoration: none;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  background-color: #efeff0;
+  height: 400px;
+  color: black;
+  border-radius: 4px;
+  &:hover {
+    transform: scale(1.05);
+  }
+  margin-bottom: 30px;
+  transition: all 0.2s ease;
 }

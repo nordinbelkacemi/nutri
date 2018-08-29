@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :meals, only: [:show]
   end
   resources :meals, only: [:index]
-  resources :subscriptions, only: [:new, :create]
+  resources :subscriptions, only: [:create, :destroy]
   resources :meal_plans, only: [:index, :new, :create, :show]
 
   root to: 'nutritionists#index'
@@ -18,4 +18,4 @@ end
 
 # indexing all meals
 # @nutritionists = current_user.nutritionists
-# 
+#

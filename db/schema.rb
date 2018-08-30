@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2018_08_22_231656) do
     t.text "description"
     t.text "recipe"
     t.string "type"
+    t.integer "time"
     t.integer "calories"
     t.bigint "nutritionist_id"
     t.string "photo"

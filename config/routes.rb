@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
   resources :meals, only: [:index]
   resources :subscriptions, only: [:create, :destroy]
-  resources :meal_plans, only: [:index, :new, :create, :show]
+  resources :meal_plans, only: [:index, :new, :create, :show, :destroy]
 
   root to: 'nutritionists#index'
 end

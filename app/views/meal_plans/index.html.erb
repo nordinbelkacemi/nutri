@@ -4,41 +4,40 @@
     <% @meal_plans.each do |meal_plan| %>
       <div class="meal-plan">
         <div class="meal-plan-card">
-          <%= link_to meal_plan_path(meal_plan), method: :delete do %>
-            <i class="far fa-times-circle close"></i>
-          <% end %>
           <div class="frame">
+            <%= link_to() do %>
+              <i class="far fa-times-circle" id="close-button"></i>
+            <% end %>
             <div class="meal-plan-name">
               <%= meal_plan.name %>
             </div>
             <% meal_plan.meals.each do |meal| %>
-
-              <div class="meal-card">
-                <div class="mask" style="background-image: url('<%= cl_image_path meal.photo %>');",>
-                  <div class="<%= meal.type.downcase %> meal-type">
-                    <%= meal.type %>
-                  </div>
+            <div class="meal-card no-grow">
+              <div class="mask" style="background-image: url('<%= cl_image_path meal.photo %>');">
+                <div class="<%= meal.type.downcase %> meal-type">
+                  <%= meal.type %>
                 </div>
-                <div class="meal-card-labels">
-                  <div class="meal-card-calories">
-                    <i class="far fa-clock"></i>
-                    <p><%= "#{meal.calories} cal" %> <%= '' %> </p>
-                  </div>
-                  <div class="meal-card-calories">
-                    <i class="fas fa-fire"></i>
-                    <p><%= "#{meal.calories} cal" %> <%= '' %> </p>
-                  </div>
-                  <div class="meal-card-calories">
-                    <i class="fas fa-utensils"></i>
-                    <p><%= meal.yield %></p>
-                  </div>
-                </div>
+              </div>
+              <div class="meal-card-labels">
+                <div class="meal-card-calories">
+                  <i class="far fa-clock"></i>
 
-                <div class="meal-card-name">
-                  <%= truncate(meal.name, length: 20, separator: ' ') %>
+                  <p><%= "#{meal.calories} cal"%></p>
+                </div>
+                <div class="meal-card-calories">
+                  <i class="fas fa-fire"></i>
+                  <p><%= "#{meal.calories} cal"%></p>
+                </div>
+                <div class="meal-card-calories">
+                  <i class="fas fa-utensils"></i>
+                  <p><%= meal.yield %></p>
                 </div>
               </div>
 
+              <div class="meal-card-name">
+                <%= truncate(meal.name, length: 40, separator: ' ') %>
+              </div>
+            </div>
             <% end %>
           </div>
         </div>
@@ -46,4 +45,3 @@
     <% end %>
   </div>
 </div>
-

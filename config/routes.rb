@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :subscriptions, only: [:create, :destroy]
   resources :meal_plans, only: [:index, :new, :create, :show, :destroy]
 
+
+
   root to: 'nutritionists#index'
 end
 

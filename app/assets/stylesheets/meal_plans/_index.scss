@@ -1,32 +1,17 @@
 .meal-plan {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 5px;
-  margin: 20px 0;
-  transition: all 0.05s ease;
-
-  .meal-card-labels {
-    width: 100%;
-  }
-
-  .meal-card:hover {
-    transform: none;
-  }
-
-  &:hover {
-    transform: scale(1.02);
-  }
+  margin: 39px 0;
 }
 
 .meal-plan-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* width: 20px; */
+  width: 300px;
   margin: 0 auto;
-
 }
 
 .meal-plan-name {
@@ -39,74 +24,30 @@
 .frame {
   padding: 25px;
   border-radius: 5px;
-  width: 300px;
-  height: 650px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-  flex-direction: column;
-  display: flex;
-  align-items: cter;
-  ul {
-    list-style: none;
+  width: 100%;
+  position: relative;
+  &:hover {
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
   }
 }
 
-.meal-carousel {
-  width: 800px;
-}
-.meal-plan-name > h4 {
-  font-size: 20px;
-}
-
-
-.meal-card {
-  width:250px;
-  height:170px;
-  align-items: center;
-}
-
-.mask {
-  position: relative;
-  height: 154px;
-  background-size: cover;
-  background-position-y: 75%;
-  background-repeat: no-repeat;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
-// .meal-plan-card:hover {
-//     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-// }
-
-// .meal-plan:hover {
-//   box-shadow: 25px rgba(0, 0, 0, 0.2);
-//   transform: scale(1.05);
-// }
-
-.selected{
-  border: 2px solid green;
-}
-
-
-.inline-icons {
-  display: flex;
-  align-items: center;
-  padding: 20px;
-
-}
-
-.inline {
-  display: flex;
-
-}
-
-.close {
-
+#close-button {
   position: absolute;
-  top: -1%;
-  right: 1%;
-  padding: 12px 16px;
+  top: 5px;
+  right: 5px;
+}
+
+.meal-plan:hover {
+  box-shadow: 25px rgba(0, 0, 0, 0.1);
+  // transform: scale(1.01);
+}
+
+.btn {
+  margin-bottom: 5%;
+}
+
+.selected {
+  border: 2px solid green;
 }
 
 .no-grow {

@@ -31,6 +31,19 @@
   max-height: 100%;
 }
 
+.meal-type-show {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: white;
+  padding: 0 20px;
+  border-radius: 5px 0px 5px 0px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: $light-font;
+  text-align: left;
+}
+
 .meals-description {
   margin: 5% 5%;
 
@@ -91,6 +104,7 @@
 }
 
 .meal-frame {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;

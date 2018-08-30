@@ -20,7 +20,7 @@ BIOS = [
   "Unapologetic tv aficionado. Extreme beer fan. Hipster-friendly twitter evangelist. Total writer."
 ]
 
-NUTRITIONISTS_PHOTO = [
+NUTRITIONIST_PHOTO = [
   "https://s3.amazonaws.com/nutri-photos/1.JPG"
 ]
 

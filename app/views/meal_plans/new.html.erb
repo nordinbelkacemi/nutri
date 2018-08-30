@@ -1,39 +1,62 @@
-<div class="nutritionist-tabs margin-top-2">
+<div class="nutritionist-tabs">
   <% if current_user.nutritionists.nil? %>
-    <%= "No nutritionists" %>
+  <div class="nutri-tab">
+    <%= link_to nutritionists_path, class: "tab-nutritionist" do %>
+        <span class="tab">
+          <i class="fas fa-plus-circle"></i>
+          <%# cl_image_tag(nutritionist.photo, width: 500, crop: :thumb, gravity: :face, class: "avatar-medium") %>
+          <span class="tab-name margin-right-2">
+            Follow others
+          </span>
+        </span>
+      <% end %>
+    </div>
   <% else %>
     <% current_user.nutritionists.each_with_index do |nutritionist, val| %>
       <% if val == 0 %>
-        <%= link_to new_meal_plan_path(nutritionist_id: nutritionist.id), remote: true, id: "nutri-#{nutritionist.id}", class: "active tab-nutritionist" do %>
-            <span class="tab">
-              <%= cl_image_tag(nutritionist.photo, width: 200, height: 200, crop: :thumb, gravity: :face, class: "avatar-small margin-left-2 margin-rigth-2") %>
-              <span class="tab-name margin-right-2">
-                <%= nutritionist.name.split(" ").last %>
+        <div class="nutri-tab">
+          <%= link_to new_meal_plan_path(nutritionist_id: nutritionist.id), remote: true, id: "nutri-#{nutritionist.id}", class: "active tab-nutritionist" do %>
+              <span class="tab">
+                <%= cl_image_tag(nutritionist.photo, width: 500, crop: :thumb, gravity: :face, class: "avatar-medium") %>
+                <span class="tab-name margin-right-2">
+                  <%= nutritionist.name.split(" ").last %>
+                </span>
               </span>
-            </span>
-          <% end %>
+            <% end %>
+        </div>
       <% else %>
-        <%= link_to new_meal_plan_path(nutritionist_id: nutritionist.id), remote: true, id: "nutri-#{nutritionist.id}" ,class: "tab-nutritionist" do %>
-            <span class="tab">
-              <%= cl_image_tag(nutritionist.photo, width: 200, height: 200, crop: :thumb, gravity: :face, class: "avatar-small margin-left-2 margin-rigth-2") %>
-              <span class="tab-name margin-right-2">
-                <%= nutritionist.name.split(" ").last %>
+        <div class="nutri-tab">
+          <%= link_to new_meal_plan_path(nutritionist_id: nutritionist.id), remote: true, id: "nutri-#{nutritionist.id}" ,class: "tab-nutritionist" do %>
+              <span class="tab">
+                <%= cl_image_tag(nutritionist.photo, width: 500, crop: :thumb, gravity: :face, class: "avatar-medium") %>
+                <span class="tab-name margin-right-2">
+                  <%= nutritionist.name.split(" ").last %>
+                </span>
               </span>
-            </span>
           <% end %>
+        </div>
       <% end %>
-
-
     <% end %>
+    <div class="nutri-tab no-right-border">
+      <%= link_to nutritionists_path, class: "tab-nutritionist" do %>
+        <span class="tab no-right-border">
+          <i class="fas fa-plus"></i>
+        </span>
+      <% end %>
+    </div>
   <% end %>
 </div>
-
-<div class="flex-std">
-  <div id="js-nutritionist-meals">
-    <%= render "nutritionist_meals", nutritionist: @nutritionist %>
-  </div>
-
-  <div class="meal-plan-planner">
-    <%= render "meal_plan", meals: @meals %>
+<div class="wrapper">
+  <div class="row">
+    <div class="col-xs-12 col-6 col-md-8">
+      <div id="js-nutritionist-meals">
+        <%= render "nutritionist_meals", nutritionist: @nutritionist %>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="meal-plan-planner">
+        <%= render "meal_plan", meals: @meals %>
+      </div>
+    </div>
   </div>
 </div>

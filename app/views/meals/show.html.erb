@@ -13,14 +13,6 @@
     <%= @meal.type %>
   </div>
 
-  <div>
-    <ul class="health-labels subtext">
-    <% @meal.health_labels.each do |label| %>
-      <li><%= label %></li>
-    <% end %>
-    </ul>
-  </div>
-
     <div class="inline">
       <div>
         <%= link_to nutritionist_path(@meal.nutritionist) do %>

@@ -25,7 +25,15 @@ User.create!(
 )
 
 puts "creating nutritionists..."
-8.times do |i|
+1.times do |i|
+  Nutritionist.create!(name: "Dr. Kojo Addaquay",
+    bio: BIO[i],
+    specialty: SPECIALTIES.sample,
+    remote_photo_url: NUTRITIONIST_PHOTO[i]
+  )
+end
+
+7.times do |i|
   Nutritionist.create!(name: "Dr. #{Faker::FunnyName.three_word_name}",
     bio: BIOS[i],
     specialty: SPECIALTIES.sample,

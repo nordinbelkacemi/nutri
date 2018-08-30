@@ -33,129 +33,9 @@ puts "creating nutritionists..."
   )
 end
 
-####### meals with api
 puts "creating meals..."
 
-request_url = "https://api.edamam.com/search?q=salad&app_id=#{ENV['EDAMAM_APP_ID']}&app_key=#{ENV['EDAMAM_API_KEY']}&q="
-queries = ["breakfast", "lunch", "dinner", "snacks"]
-
-puts "creating breakfast..."
-response = Faraday.get request_url + "beans"
-recipes = JSON.parse(response.body)["hits"]
-
-for i in 0...4
-  recipe = recipes[i]["recipe"]
-
-  meal = Meal.create!(
-    name: recipe["label"],
-    nutritionist: Nutritionist.first,
-    type: "breakfast",
-    calories: recipe["calories"].floor,
-    remote_photo_url: recipe["image"],
-    recipe: "Stir together tuna, mayonnaise, green onions, red pepper, and balsamic vinegar in a bowl. Season with pepper and garlic salt, then pack the avocado halves with the tuna mixture. Garnish with reserved green onions and a dash of black pepper before serving.",
-    fat: recipe["totalNutrients"]["FAT"]["quantity"].floor,
-    carbs: recipe["totalNutrients"]["CHOCDF"]["quantity"].floor,
-    protein: recipe["totalNutrients"]["PROCNT"]["quantity"].floor,
-    healthLabels: recipe["healthLabels"],
-    yield: recipe["yield"]
-
-  )
-
-  recipe["ingredients"].each do |ingredient|
-    Ingredient.create!(
-      meal: meal,
-      name: ingredient["text"]
-    )
-  end
-end
-# prevent making too many requests too fast
-sleep(3)
-
-puts "creating lunch..."
-response = Faraday.get request_url + "wrap"
-recipes = JSON.parse(response.body)["hits"]
-
-for i in 0...5
-  recipe = recipes[i]["recipe"]
-
-  meal = Meal.create!(
-    name: recipe["label"],
-    nutritionist: Nutritionist.first,
-    type: "lunch",
-    calories: recipe["calories"].floor,
-    remote_photo_url: recipe["image"],
-    fat: recipe["totalNutrients"]["FAT"]["quantity"].floor,
-    carbs: recipe["totalNutrients"]["CHOCDF"]["quantity"].floor,
-    protein: recipe["totalNutrients"]["PROCNT"]["quantity"].floor,
-    healthLabels: recipe["healthLabels"],
-    yield: recipe["yield"]
-  )
-  recipe["ingredients"].each do |ingredient|
-    Ingredient.create!(
-      meal: meal,
-      name: ingredient["text"]
-    )
-  end
-end
-
-sleep(3)
-
-puts "creating dinner..."
-response = Faraday.get request_url + "soup"
-recipes = JSON.parse(response.body)["hits"]
-
-for i in 0...5
-  recipe = recipes[i]["recipe"]
-
-  meal = Meal.create!(
-    name: recipe["label"],
-    nutritionist: Nutritionist.first,
-    type: "dinner",
-    calories: recipe["calories"].floor,
-    remote_photo_url: recipe["image"],
-    fat: recipe["totalNutrients"]["FAT"]["quantity"].floor,
-    carbs: recipe["totalNutrients"]["CHOCDF"]["quantity"].floor,
-    protein: recipe["totalNutrients"]["PROCNT"]["quantity"].floor,
-    healthLabels: recipe["healthLabels"],
-    yield: recipe["yield"]
-  )
-  recipe["ingredients"].each do |ingredient|
-    Ingredient.create!(
-      meal: meal,
-      name: ingredient["text"]
-    )
-  end
-end
-
-puts "creating snacks..."
-response = Faraday.get request_url + "vegetables"
-recipes = JSON.parse(response.body)["hits"]
-
-for i in 0...5
-  recipe = recipes[i]["recipe"]
-
-  meal = Meal.create!(
-    name: recipe["label"],
-    nutritionist: Nutritionist.first,
-    type: "snack",
-    calories: recipe["calories"].floor,
-    remote_photo_url: recipe["image"],
-    fat: recipe["totalNutrients"]["FAT"]["quantity"].floor,
-    carbs: recipe["totalNutrients"]["CHOCDF"]["quantity"].floor,
-    protein: recipe["totalNutrients"]["PROCNT"]["quantity"].floor,
-    healthLabels: recipe["healthLabels"],
-    yield: recipe["yield"]
-  )
-  recipe["ingredients"].each do |ingredient|
-    Ingredient.create!(
-      meal: meal,
-      name: ingredient["text"]
-    )
-  end
-end
-
-#Custom Snack for demo
-
+####### meals for demo
 #Custom Dinner for demo
 meal = Meal.create!(
     name: "The Krabby Patty",
@@ -227,6 +107,223 @@ B_INGREDIENTS.each do |ingredient|
       name: ingredient
     )
   end
+
+
+####### meals with api
+
+request_url = "https://api.edamam.com/search?&app_id=#{ENV['EDAMAM_APP_ID']}&app_key=#{ENV['EDAMAM_API_KEY']}&q="
+queries = ["breakfast", "lunch", "dinner", "snacks"]
+
+puts "creating breakfast..."
+
+#1st nutritionist breakfast
+response = Faraday.get request_url + "herbs"
+recipes = JSON.parse(response.body)["hits"]
+
+for i in 0...3
+  recipe = recipes[i]["recipe"]
+
+  meal = Meal.create!(
+    name: recipe["label"],
+    nutritionist: Nutritionist.first,
+    type: "breakfast",
+    calories: recipe["calories"].floor,
+    remote_photo_url: recipe["image"],
+    recipe: "Stir together tuna, mayonnaise, green onions, red pepper, and balsamic vinegar in a bowl. Season with pepper and garlic salt, then pack the avocado halves with the tuna mixture. Garnish with reserved green onions and a dash of black pepper before serving.",
+    fat: recipe["totalNutrients"]["FAT"]["quantity"].floor,
+    carbs: recipe["totalNutrients"]["CHOCDF"]["quantity"].floor,
+    protein: recipe["totalNutrients"]["PROCNT"]["quantity"].floor,
+    healthLabels: recipe["healthLabels"],
+    yield: recipe["yield"]
+
+  )
+
+  recipe["ingredients"].each do |ingredient|
+    Ingredient.create!(
+      meal: meal,
+      name: ingredient["text"]
+    )
+  end
+end
+# prevent making too many requests too fast
+sleep(3)
+
+#other nutritionist breakfasts
+response = Faraday.get request_url + "herb"
+recipes = JSON.parse(response.body)["hits"]
+
+for i in 0...10
+  recipe = recipes[i]["recipe"]
+
+  meal = Meal.create!(
+    name: recipe["label"],
+    nutritionist: Nutritionist.all.sample,
+    type: "breakfast",
+    calories: recipe["calories"].floor,
+    remote_photo_url: recipe["image"],
+    recipe: "Stir together tuna, mayonnaise, green onions, red pepper, and balsamic vinegar in a bowl. Season with pepper and garlic salt, then pack the avocado halves with the tuna mixture. Garnish with reserved green onions and a dash of black pepper before serving.",
+    fat: recipe["totalNutrients"]["FAT"]["quantity"].floor,
+    carbs: recipe["totalNutrients"]["CHOCDF"]["quantity"].floor,
+    protein: recipe["totalNutrients"]["PROCNT"]["quantity"].floor,
+    healthLabels: recipe["healthLabels"],
+    yield: recipe["yield"]
+
+  )
+
+  recipe["ingredients"].each do |ingredient|
+    Ingredient.create!(
+      meal: meal,
+      name: ingredient["text"]
+    )
+  end
+end
+
+sleep(3)
+#1st nutritionist lunch
+puts "creating lunch..."
+response = Faraday.get request_url + "wrap"
+recipes = JSON.parse(response.body)["hits"]
+
+for i in 0...3
+  recipe = recipes[i]["recipe"]
+
+  meal = Meal.create!(
+    name: recipe["label"],
+    nutritionist: Nutritionist.first,
+    type: "lunch",
+    calories: recipe["calories"].floor,
+    remote_photo_url: recipe["image"],
+    fat: recipe["totalNutrients"]["FAT"]["quantity"].floor,
+    carbs: recipe["totalNutrients"]["CHOCDF"]["quantity"].floor,
+    protein: recipe["totalNutrients"]["PROCNT"]["quantity"].floor,
+    healthLabels: recipe["healthLabels"],
+    yield: recipe["yield"]
+  )
+  recipe["ingredients"].each do |ingredient|
+    Ingredient.create!(
+      meal: meal,
+      name: ingredient["text"]
+    )
+  end
+end
+
+sleep(3)
+
+#other nutritionists lunch
+response = Faraday.get request_url + "pesto"
+recipes = JSON.parse(response.body)["hits"]
+
+for i in 0...10
+  recipe = recipes[i]["recipe"]
+
+  meal = Meal.create!(
+    name: recipe["label"],
+    nutritionist: Nutritionist.all.sample,
+    type: "lunch",
+    calories: recipe["calories"].floor,
+    remote_photo_url: recipe["image"],
+    fat: recipe["totalNutrients"]["FAT"]["quantity"].floor,
+    carbs: recipe["totalNutrients"]["CHOCDF"]["quantity"].floor,
+    protein: recipe["totalNutrients"]["PROCNT"]["quantity"].floor,
+    healthLabels: recipe["healthLabels"],
+    yield: recipe["yield"]
+  )
+  recipe["ingredients"].each do |ingredient|
+    Ingredient.create!(
+      meal: meal,
+      name: ingredient["text"]
+    )
+  end
+end
+
+sleep(3)
+
+#first nutritionist dinner
+
+puts "creating dinner..."
+response = Faraday.get request_url + "soup"
+recipes = JSON.parse(response.body)["hits"]
+
+for i in 0...3
+  recipe = recipes[i]["recipe"]
+
+  meal = Meal.create!(
+    name: recipe["label"],
+    nutritionist: Nutritionist.first,
+    type: "dinner",
+    calories: recipe["calories"].floor,
+    remote_photo_url: recipe["image"],
+    fat: recipe["totalNutrients"]["FAT"]["quantity"].floor,
+    carbs: recipe["totalNutrients"]["CHOCDF"]["quantity"].floor,
+    protein: recipe["totalNutrients"]["PROCNT"]["quantity"].floor,
+    healthLabels: recipe["healthLabels"],
+    yield: recipe["yield"]
+  )
+  recipe["ingredients"].each do |ingredient|
+    Ingredient.create!(
+      meal: meal,
+      name: ingredient["text"]
+    )
+  end
+end
+
+sleep(3)
+
+#other nutritionists dinner
+response = Faraday.get request_url + "greens"
+recipes = JSON.parse(response.body)["hits"]
+
+for i in 0...10
+  recipe = recipes[i]["recipe"]
+
+  meal = Meal.create!(
+    name: recipe["label"],
+    nutritionist: Nutritionist.all.sample,
+    type: "dinner",
+    calories: recipe["calories"].floor,
+    remote_photo_url: recipe["image"],
+    fat: recipe["totalNutrients"]["FAT"]["quantity"].floor,
+    carbs: recipe["totalNutrients"]["CHOCDF"]["quantity"].floor,
+    protein: recipe["totalNutrients"]["PROCNT"]["quantity"].floor,
+    healthLabels: recipe["healthLabels"],
+    yield: recipe["yield"]
+  )
+  recipe["ingredients"].each do |ingredient|
+    Ingredient.create!(
+      meal: meal,
+      name: ingredient["text"]
+    )
+  end
+end
+
+sleep(3)
+
+puts "creating snacks..."
+response = Faraday.get request_url + "crunch"
+recipes = JSON.parse(response.body)["hits"]
+
+for i in 0...5
+  recipe = recipes[i]["recipe"]
+
+  meal = Meal.create!(
+    name: recipe["label"],
+    nutritionist: Nutritionist.first,
+    type: "snack",
+    calories: recipe["calories"].floor,
+    remote_photo_url: recipe["image"],
+    fat: recipe["totalNutrients"]["FAT"]["quantity"].floor,
+    carbs: recipe["totalNutrients"]["CHOCDF"]["quantity"].floor,
+    protein: recipe["totalNutrients"]["PROCNT"]["quantity"].floor,
+    healthLabels: recipe["healthLabels"],
+    yield: recipe["yield"]
+  )
+  recipe["ingredients"].each do |ingredient|
+    Ingredient.create!(
+      meal: meal,
+      name: ingredient["text"]
+    )
+  end
+end
 
 puts "creating meal plans ;)"
 

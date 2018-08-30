@@ -11,7 +11,13 @@
         <p><%= @nutritionist.bio %></p>
       </h6>
     </div>
-    <%= link_to 'Follow', subscriptions_path(nutritionist_id: @nutritionist), method: :post, remote: 'true', class: "follow" %>
+    <% if current_user.nutritionists.include?(@nutritionist) %>
+      <div class="followed">
+        followed
+      </div>
+    <% else %>
+      <%= link_to 'Follow', subscriptions_path(nutritionist_id: @nutritionist), method: :post, remote: 'true', class: "follow" %>
+    <% end %>
   </div>
   <div class="row">
   <% @nutritionist.meals.each do |meal| %>

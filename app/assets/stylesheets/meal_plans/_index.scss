@@ -25,14 +25,21 @@
   padding: 25px;
   border-radius: 5px;
   width: 100%;
+  position: relative;
   &:hover {
-    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
   }
 }
 
+#close-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
 .meal-plan:hover {
-  box-shadow: 25px rgba(0, 0, 0, 0.2);
-  transform: scale(1.05);
+  box-shadow: 25px rgba(0, 0, 0, 0.1);
+  // transform: scale(1.01);
 }
 
 .btn {

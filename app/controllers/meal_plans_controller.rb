@@ -1,5 +1,5 @@
 class MealPlansController < ApplicationController
-  before_action :set_meal_plans, only: [:edit, :update, :destroy]
+  before_action only: [:edit, :update, :destroy]
 
   def index
     @meal_plans = current_user.meal_plans
@@ -47,4 +47,11 @@ class MealPlansController < ApplicationController
     # go back to your meal plans index page
     redirect_to meal_plans_path
   end
+
+  def destroy
+    @meal_plan = MealPlan.find(params[:id])
+    @meal_plan.destroy
+    redirect_to meal_plans_path
+  end
+
 end

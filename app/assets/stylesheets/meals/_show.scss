@@ -12,15 +12,17 @@
   justify-content: center;
   list-style-type: none;
   margin-left: none;
+  color: #E89B41;
 }
 
 .health-labels > li {
   padding-left: 10px;
+  margin-bottom: 20px;
 }
 
 .meals-photo {
   margin-top: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   width: 300px

@@ -29,7 +29,7 @@ puts "creating nutritionists..."
   Nutritionist.create!(name: "Dr. Kojo Addaquay",
     bio: BIO[i],
     specialty: SPECIALTIES.sample,
-    remote_photo_url: NUTRITIONISTS_PHOTOS[i]
+    remote_photo_url: NUTRITIONIST_PHOTO[i]
   )
 end
 

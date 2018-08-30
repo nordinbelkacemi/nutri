@@ -5,6 +5,9 @@
       <div class="meal-plan">
         <div class="meal-plan-card">
           <div class="frame">
+            <%= link_to() do %>
+              <i class="far fa-times-circle" id="close-button"></i>
+            <% end %>
             <div class="meal-plan-name">
               <%= meal_plan.name %>
             </div>
@@ -18,6 +21,7 @@
               <div class="meal-card-labels">
                 <div class="meal-card-calories">
                   <i class="far fa-clock"></i>
+
                   <p><%= "#{meal.calories} cal"%></p>
                 </div>
                 <div class="meal-card-calories">

@@ -4,13 +4,6 @@
   </div>
 
 
-  <div>
-    <ul class="health-labels">
-    <% @meal.health_labels.each do |label| %>
-      <li> <%= label %> | </li>
-    <% end %>
-    </ul>
-  </div>
 
   <div class="meal-frame">
     <div class="meals-photo">
@@ -18,6 +11,14 @@
     </div>
   <div class="<%= @meal.type %> meal-type-show">
     <%= @meal.type %>
+  </div>
+
+  <div>
+    <ul class="health-labels subtext">
+    <% @meal.health_labels.each do |label| %>
+      <li><%= label %></li>
+    <% end %>
+    </ul>
   </div>
 
     <div class="inline">
@@ -90,7 +91,6 @@
 
   <div class="meal-recipe">
     <h4>Recipe</h4>
-    <p><%= @meal.recipe %></p>
     <p><%= @meal.recipe %></p>
   </div>
 

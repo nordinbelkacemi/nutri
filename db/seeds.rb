@@ -27,7 +27,7 @@ User.create!(
 puts "creating nutritionists..."
 1.times do |i|
   Nutritionist.create!(name: "Dr. Kojo Addaquay",
-    bio: BIOS[i],
+    bio: BIO[i],
     specialty: SPECIALTIES.sample,
     remote_photo_url: NUTRITIONISTS_PHOTOS[i]
   )

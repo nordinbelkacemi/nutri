@@ -6,8 +6,11 @@ SNACKS = [
   "Chef’s Cut Buffalo Style Chicken Jerky"
 ]
 
+BIO = [
+  "General twitter fanatic. Subtly charming pop culture advocate. Internet trailblazer."
+  ]
+
 BIOS = [
-  "General twitter fanatic. Subtly charming pop culture advocate. Internet trailblazer.",
   "General creator. Thinker. Coffee guru. Social media junkie. Unapologetic alcohol maven.",
   "Hardcore thinker. Hipster-friendly student. Certified writer. Typical problem solver. Musicaholic. Reader.",
   "Avid coffee expert. Writer. Reader. Internet nerd. Pop culture guru. Tvaholic. Travel fan. Beer evangelist.",

@@ -1,5 +1,5 @@
-<div class="container text-center">
-  <%= link_to "New Meal Plan", new_meal_plan_path, class: "follow" %>
+<div class="container">
+  <%= link_to "New Meal Plan", new_meal_plan_path, class: "follow-clone" %>
   <div id="meal-carousel">
     <% @meal_plans.each do |meal_plan| %>
       <div class="meal-plan">
@@ -12,6 +12,7 @@
               <%= meal_plan.name %>
             </div>
             <% meal_plan.meals.each do |meal| %>
+
               <div class="meal-card">
                 <div class="mask" style="background-image: url('<%= cl_image_path meal.photo %>');",>
                   <div class="<%= meal.type.downcase %> meal-type">
@@ -37,6 +38,7 @@
                   <%= truncate(meal.name, length: 20, separator: ' ') %>
                 </div>
               </div>
+
             <% end %>
           </div>
         </div>

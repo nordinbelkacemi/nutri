@@ -1,6 +1,12 @@
-<%= form_tag(meal_plans_path, method: "post", class: "meal-planner") do %>
-  <%= text_field_tag(:meal_plan_name) %>
+<%= form_tag(meal_plans_path, method: "post", class: "meal-planner", id: "meal-plan-form") do %>
+  <div class="plan-your-day">
+    Plan your day here
+  </div>
+  <%= text_field_tag(:meal_plan_name, nil, placeholder:"Name your mealplan", class: "input-meal-plan-name") %>
   <div class="meal-selections">
   </div>
-  <%= submit_tag %>
+  <%= button_tag class: "go-btn" do %>
+    Done
+    <!-- <i class="fas fa-check"></i> -->
+  <% end %>
 <% end %>

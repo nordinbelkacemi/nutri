@@ -5,6 +5,7 @@ class CreateMeals < ActiveRecord::Migration[5.2]
       t.text :description
       t.text :recipe
       t.string :type
+      t.integer :time
       t.integer :calories
       t.references :nutritionist, foreign_key: true
       t.references :meal_plan, foreign_key: true
@@ -14,6 +15,7 @@ class CreateMeals < ActiveRecord::Migration[5.2]
       t.string :fat
       t.string :protein
       t.integer :yield
+      t.integer :prep_time
 
       t.timestamps
     end

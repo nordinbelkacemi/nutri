@@ -18,14 +18,14 @@ BIOS = [
 ]
 
 NUTRITIONISTS_PHOTOS = [
-  "https://www.innit.com/assets/images/team/team/james_armstrong_a.jpg",
-  "https://www.innit.com/assets/images/team/team/kristina_aguirre_a.jpg",
-  "https://www.innit.com/assets/images/team/team/greg_angrish_a.jpg",
-  "https://www.innit.com/assets/images/team/team/vincent_arcelo_a.jpg",
-  "https://www.innit.com/assets/images/team/team/shyam_ashok_a.jpg",
-  "https://www.innit.com/assets/images/team/team/juan_baranda_a.jpg",
-  "https://www.innit.com/assets/images/team/team/anisa-bashiri-a.jpg",
-  "https://www.innit.com/assets/images/team/team/diego_bravo_a.jpg"
+  "https://s3.amazonaws.com/nutri-photos/1.JPG",
+  "https://s3.amazonaws.com/nutri-photos/2.jpg",
+  "https://s3.amazonaws.com/nutri-photos/3.jpg",
+  "https://s3.amazonaws.com/nutri-photos/4.jpg",
+  "https://s3.amazonaws.com/nutri-photos/5.jpg",
+  "https://s3.amazonaws.com/nutri-photos/6.jpg",
+  "https://s3.amazonaws.com/nutri-photos/7.jpg",
+  "https://s3.amazonaws.com/nutri-photos/8.jpg"
 ]
 
 SPECIALTIES = [

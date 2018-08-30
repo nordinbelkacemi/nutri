@@ -26,6 +26,14 @@
   align-items: center;
   /* width: 20px; */
   margin: 0 auto;
+
+}
+
+.meal-plan-name {
+  text-align: center;
+  font-weight: 500;
+  margin-top: 20px;
+  color: rgba(0,0,0,0.7)
 }
 
 .frame {
@@ -37,19 +45,10 @@
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   flex-direction: column;
   display: flex;
-  align-items: center;
+  align-items: cter;
   ul {
     list-style: none;
   }
-}
-
-
-.btn {
-  margin-bottom: 0px
-}
-
-.container {
-  margin-top: -80px;;
 }
 
 .meal-carousel {
@@ -67,8 +66,13 @@
 }
 
 .mask {
-  width:250px;
-  height: 70px;
+  position: relative;
+  height: 154px;
+  background-size: cover;
+  background-position-y: 75%;
+  background-repeat: no-repeat;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 // .meal-plan-card:hover {
@@ -105,6 +109,6 @@
   padding: 12px 16px;
 }
 
-
-
-
+.no-grow {
+  pointer-events: none;
+}

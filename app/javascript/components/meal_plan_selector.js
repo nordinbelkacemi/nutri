@@ -10,12 +10,19 @@ if (meal_plan) {
       mealSelection.lastElementChild.setAttribute("name", mealTypes[index]);
     });
   });
+
+  const mealPlanForm = document.querySelector("#meal-plan-form");
+  const mealPlanFromButton = document.querySelector("#meal-plan-form button");
+
+  mealPlanFromButton.addEventListener("click", () => mealPlanForm.submit());
 }
 
 function addToForm(meal) {
   const insertion =
   "<div class='selection meal-selection-" + meal.dataset.mealId + "'>" +
-    "<img width='1000px' height='750px' class='meal-selection-image' src='" + meal.children[0].src + "'>" +
+    "<img height='70px' class='image-selection' src='" + meal.children[0].dataset.picUrl + "'>" +
+    "<div class='meal-selection-name'>" + meal.dataset.mealName +"</div>" +
+    "<div class='meal-selection-calories'><i class='fas fa-fire'></i>" + meal.dataset.mealCalories + "</div>" +
     `<input type='hidden' value='${meal.dataset.mealId}'>` +
   "</div>";
 
@@ -34,7 +41,6 @@ function removeFromForm(meal) {
 function initMealPlanSelectorLogic() {
   const meals = [];
   const mealsFromTab = document.querySelectorAll(".nutritionist-meal-card");
-
   mealsFromTab.forEach(function(element) {
     element.addEventListener("click", (event) => {
       event.currentTarget.classList.toggle("selected");

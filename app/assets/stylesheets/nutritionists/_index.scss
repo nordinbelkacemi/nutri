@@ -55,6 +55,7 @@
   width: 500px;
   height: 40px;
   border-radius: 20px;
+  margin: 30px auto;
 }
 
 .nutritionist-card {
@@ -62,7 +63,7 @@
   position: relative;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   background-color: #efeff0;
-  height: 400px;
+  height: 450px;
   color: black;
   border-radius: 4px;
   &:hover {
@@ -70,4 +71,19 @@
   }
   margin-bottom: 30px;
   transition: all 0.2s ease;
+  .name-nutritionist {
+    height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+#js-nutritionists {
+  margin-top: 20px;
+}
+
+.eat-healthy {
+  font-weight: lighter;
+  font-size: 25px;
 }

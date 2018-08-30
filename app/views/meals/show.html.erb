@@ -16,8 +16,8 @@
     <div class="meals-photo">
       <%= cl_image_tag(@meal.photo, crop: :thumb, gravity: :face) %>
     </div>
-  <div class="meals-header">
-    <p class="<%= @meal.type %>"><%= @meal.type %></p>
+  <div class="<%= @meal.type %> meal-type-show">
+    <%= @meal.type %>
   </div>
 
     <div class="inline">

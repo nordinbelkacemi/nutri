@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2018_08_22_231656) do
     t.text "description"
     t.text "recipe"
     t.string "type"
+    t.integer "time"
     t.integer "calories"
     t.bigint "nutritionist_id"
     t.string "photo"
@@ -64,6 +65,7 @@ ActiveRecord::Schema.define(version: 2018_08_22_231656) do
     t.string "fat"
     t.string "protein"
     t.integer "yield"
+    t.integer "prep_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["nutritionist_id"], name: "index_meals_on_nutritionist_id"

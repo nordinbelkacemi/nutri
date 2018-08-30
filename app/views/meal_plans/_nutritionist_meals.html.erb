@@ -1,19 +1,36 @@
+<div class="row">
+  <% if nutritionist.meals.nil? %>
+    <%= "Sorry bud..." %>
+  <% else %>
+    <% nutritionist.meals.each do |meal| %>
+    <div class="col-xs-12 col-sm-4 col-md-4">
+      <div class="nutritionist-meal-card" data-meal-id="<%= meal.id %>" data-meal-name="<%= truncate(meal.name, length: 18, separator: ' ') %>" data-meal-calories="<%= meal.calories %>">
+        <span data-pic-url="<%= cl_image_path meal.photo %>"></span>
+        <div class="mask" style="background-image: url('<%= cl_image_path meal.photo %>');">
+        <div class="<%= meal.type.downcase %> meal-type">
+          <%= meal.type %>
+        </div>
+      </div>
+        <div class="meal-card-labels">
+        <div class="meal-card-calories">
+          <i class="far fa-clock"></i>
+          <p><%= "#{meal.calories} cal"%></p>
+        </div>
+        <div class="meal-card-calories">
+          <i class="fas fa-fire"></i>
+          <p><%= "#{meal.calories} cal"%></p>
+        </div>
+        <div class="meal-card-calories">
+          <i class="fas fa-utensils"></i>
+          <p><%= meal.yield %></p>
+        </div>
+        </div>
 
-<% if nutritionist.meals.nil? %>
-  <%= "Sorry bud..." %>
-<% else %>
-  <% nutritionist.meals.each do |meal| %>
-    <div class='nutritionist-meal-card' data-meal-id="<%= meal.id %>">
-      <%= cl_image_tag meal.photo, crop: :fill, class: 'image-meal' %>
-      <div class='name-meal'>
-        <%= truncate(meal.name, length: 35, separator: ' ') %>
-      </div>
-      <div class="<%= meal.type.downcase %> meal-type">
-        <%= meal.type %>
-      </div>
-      <div class="calories text-center">
-        <%= "#{meal.calories} cal" %>
+        <div class="meal-card-name">
+          <%= truncate(meal.name, length: 40, separator: ' ') %>
+        </div>
       </div>
     </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>

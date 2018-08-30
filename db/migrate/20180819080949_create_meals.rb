@@ -15,6 +15,7 @@ class CreateMeals < ActiveRecord::Migration[5.2]
       t.string :fat
       t.string :protein
       t.integer :yield
+      t.integer :prep_time
 
       t.timestamps
     end

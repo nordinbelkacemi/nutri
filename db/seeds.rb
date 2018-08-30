@@ -366,62 +366,19 @@ Subscription.create!(user: User.third, nutritionist: Nutritionist.third)
 
 Meal.create!(
   nutritionist: Nutritionist.second,
+  prep_time: (rand * 10).round,
+  calories: 850,
+  yield: 2,
   name: "test meal",
   type: "Dinner",
   remote_photo_url: "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fb2e66d3d3bf1c413f143e9a723c5309&auto=format&fit=crop&w=668&q=80",
 )
 Meal.create!(
   nutritionist: Nutritionist.third,
+  prep_time: (rand * 10).round,
+  calories: 600,
+  yield: 4,
   name: "test meal",
   type: "Lunch",
   remote_photo_url: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=67fb2e7b1fbe39b18b51146234ef38aa&auto=format&fit=crop&w=1500&q=80",
 )
-
-
-
-
-# puts "  breakfast..."
-# 5.times do |i|
-#   Meal.create!(
-#     name: Faker::Food.dish,
-#     nutritionist: Nutritionist.first,
-#     type: "breakfast",
-#     calories: rand(200..500),
-#     remote_photo_url: MEAL_PHOTOS[i]
-#   )
-# end
-
-# puts "  lunch..."
-# 5.times do |i|
-#   Meal.create!(
-#     name: Faker::Food.dish,
-#     nutritionist: Nutritionist.first,
-#     type: "lunch",
-#     calories: rand(500..800),
-#     remote_photo_url: MEAL_PHOTOS[i]
-#   )
-# end
-
-# puts "  dinner..."
-# 5.times do |i|
-#   Meal.create!(
-#     name: Faker::Food.dish,
-#     nutritionist: Nutritionist.first,
-#     type: "dinner",
-#     calories: rand(500..800),
-#     remote_photo_url: MEAL_PHOTOS[i]
-#   )
-# end
-
-# puts "  snacks..."
-# 5.times do |i|
-#   Meal.create!(
-#     name: SNACKS[i],
-#     nutritionist: Nutritionist.first,
-#     type: "Snack",
-#     calories: rand(50..300),
-#     remote_photo_url: MEAL_PHOTOS[i]
-#   )
-# end
-
-############ end meals with api

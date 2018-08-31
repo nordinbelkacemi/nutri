@@ -12,8 +12,8 @@
       </h6>
     </div>
     <% if current_user.nutritionists.include?(@nutritionist) %>
-      <div class="Following">
-        followed
+      <div class="followed">
+        Following
       </div>
     <% else %>
       <%= link_to 'Follow', subscriptions_path(nutritionist_id: @nutritionist.id), method: :post, class: "follow" %>

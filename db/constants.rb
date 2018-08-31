@@ -107,14 +107,14 @@ B_INGREDIENTS = [
 ]
 
 B_DIRECTIONS =
-  '1. Preheat the oven to 400 degrees F.\n\n
-  2. Bring the coconut milk to a boil in a medium stockpot.\n\n
-  3. Add the coconut and season with salt and pepper.\n\n
-  4. Cover the pot, remove from the heat, and let stand 10 minutes.\n\n
-  5. Finally, stir in the scallion, parsley, mint, and pumpkin seeds.\n\n
-  6. Meanwhile, season both sides of the salmon with blackening seasoning.\n\n
-  7. Place the fish on a parchment lined baking sheet, until just cooked through but still medium-rare in center, about 10 minutes.\n\n
-  8. Make a bed of parsley, place the fish on top, tear up some extra mint leaves for garnish, and serve with lemon wedges (optional).\n\n'
+  '1. Preheat the oven to 400 degrees F.
+  2. Bring the coconut milk to a boil in a medium stockpot.
+  3. Add the coconut and season with salt and pepper.
+  4. Cover the pot, remove from the heat, and let stand 10 minutes.
+  5. Finally, stir in the scallion, parsley, mint, and pumpkin seeds.
+  6. Meanwhile, season both sides of the salmon with blackening seasoning.
+  7. Place the fish on a parchment lined baking sheet, until just cooked through but still medium-rare in center, about 10 minutes.
+  8. Make a bed of parsley, place the fish on top, tear up some extra mint leaves for garnish, and serve with lemon wedges (optional).'
 
 L_INGREDIENTS = [
 "8 kaffir lime leaves",
@@ -131,14 +131,14 @@ L_INGREDIENTS = [
 "2 garlic cloves, finely chopped",
 ]
 
-L_DIRECTIONS = '1. To make the dressing, tip all the ingredients and 4 of the torn lime leaves in a small saucepan and bring to a simmer.\n\n
-2. Boil for 1 min, then remove from the heat to infuse.\n\n
-3. Cook the noodles according to pack instructions, then drain and toss with 3 tbsp of the sesame oil.\n\n
-4. Leave to cool, tossing occasionally so they don’t stick. Set aside.\n\n
-5. Heat the rest of the oil in a wok and stir-fry the peppers, carrots, ginger and garlic for just 1 min, then set aside.\n\n
-6. To serve, tip the noodles into a bowl and drain over the dressing.\n\n
-7. Finely shred the remaining lime leaves and toss in with all the other ingredients, setting aside a small handful of coriander leaves.\n\n
-8. Taste the noodles, adding a splash more vinegar, soy or sesame oil to suit your taste. Pile the noodles onto a platter or into a large bowl.\n\n
+L_DIRECTIONS = '1. To make the dressing, tip all the ingredients and 4 of the torn lime leaves in a small saucepan and bring to a simmer.
+2. Boil for 1 min, then remove from the heat to infuse.
+3. Cook the noodles according to pack instructions, then drain and toss with 3 tbsp of the sesame oil.
+4. Leave to cool, tossing occasionally so they don’t stick. Set aside.
+5. Heat the rest of the oil in a wok and stir-fry the peppers, carrots, ginger and garlic for just 1 min, then set aside.
+6. To serve, tip the noodles into a bowl and drain over the dressing.
+7. Finely shred the remaining lime leaves and toss in with all the other ingredients, setting aside a small handful of coriander leaves.
+8. Taste the noodles, adding a splash more vinegar, soy or sesame oil to suit your taste. Pile the noodles onto a platter or into a large bowl.
 9. Scatter over the rest of the coriander and serve.'
 
 D_INGREDIENTS = [
@@ -154,13 +154,13 @@ D_INGREDIENTS = [
 ]
 
 D_DIRECTIONS = [
-  '1. Place the chopped onions and celery into a skillet or frying pan. Sauté in 1 tablespoon of oil.\n\n
-  2. Reduce the heat and cook gently until the onions wilt, or appear transparent. Avoid browning or burning them.\n\n
-  3. Mix the pickles, sauteed onions, see cheese, mustard, salt, and pepper in a mixing bowl.\n\n
-  4. Mix well until all ingredients are properly combined.\n\n
-  5. Make round patty shapes using a mold or your hands. Pat them flat or use the back of a fork.\n\n
-  6. Heat 3 tablespoons of oil. Cook the patties in batches of 2 to 3 at a time.\n\n
-  7. Cook each patty 2 minutes each side, or until the patties are golden brown. Keep adding oil for following batches as needed. \n\n
-  8. Preheat the oven to 200ºC/400ºF. Add the fried Krabby patties to the oven for a 10 minute bake.\n\n
+  '1. Place the chopped onions and celery into a skillet or frying pan. Sauté in 1 tablespoon of oil.
+  2. Reduce the heat and cook gently until the onions wilt, or appear transparent. Avoid browning or burning them.
+  3. Mix the pickles, sauteed onions, see cheese, mustard, salt, and pepper in a mixing bowl.
+  4. Mix well until all ingredients are properly combined.
+  5. Make round patty shapes using a mold or your hands. Pat them flat or use the back of a fork.
+  6. Heat 3 tablespoons of oil. Cook the patties in batches of 2 to 3 at a time.
+  7. Cook each patty 2 minutes each side, or until the patties are golden brown. Keep adding oil for following batches as needed.
+  8. Preheat the oven to 200ºC/400ºF. Add the fried Krabby patties to the oven for a 10 minute bake.
   9. Place patties inside bun with lettuce and ketchup'
 ]

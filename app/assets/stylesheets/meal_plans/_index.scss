@@ -31,7 +31,9 @@
     box-shadow: 0 0 15px rgba(0,0,0,0.05);
   }
 }
-
+.frame-index{
+  display: flex;
+}
 #close-button {
   position: absolute;
   top: 5px;
@@ -89,4 +91,17 @@
   flex-direction: column;
   justify-content: space-between;
   height: 800px;
+}
+
+.title-meal-plan-index {
+  width: 100%;
+  text-align: left;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: rgba(248, 36, 98, 1);
+  font-weight: 400;
+}
+
+.no-margin-top {
+  margin-top: 0;
 }

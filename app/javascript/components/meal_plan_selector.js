@@ -20,7 +20,7 @@ if (meal_plan) {
 function addToForm(meal) {
   const insertion =
   "<div class='selection meal-selection-" + meal.dataset.mealId + "'>" +
-    "<img height='70px' class='image-selection' src='" + meal.children[0].dataset.picUrl + "'>" +
+    "<div class='img-sidebar' style=\"background-image: url('" + meal.children[0].dataset.picUrl + "');\"></div>"+
     "<div class='meal-selection-content'><div class='meal-selection-name'>" + meal.dataset.mealName +"</div>" +
     "<div class='meal-selection-calories'><i class='fas fa-fire'></i>" + meal.dataset.mealCalories + "</div></div>" +
     `<input type='hidden' value='${meal.dataset.mealId}'>` +
@@ -43,6 +43,7 @@ function initMealPlanSelectorLogic() {
   const mealsFromTab = document.querySelectorAll(".nutritionist-meal-card");
   mealsFromTab.forEach(function(element) {
     element.addEventListener("click", (event) => {
+      if (event.target.classList.contains("meal-details")) { return false; }
       event.currentTarget.classList.toggle("selected");
       const mealId = event.currentTarget.dataset.mealId;
       let mealElement = document.querySelector(".meal-selection-" + mealId)

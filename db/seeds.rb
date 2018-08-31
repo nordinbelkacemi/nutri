@@ -28,16 +28,24 @@ puts "creating nutritionists..."
 1.times do |i|
   Nutritionist.create!(name: "Dr. Greg House",
     bio: BIO[i],
-    specialty: "Pediatric",
+    specialty: "Maternal Health",
     remote_photo_url: NUTRITIONIST_PHOTO[i]
   )
 end
 
-7.times do |i|
+6.times do |i|
   Nutritionist.create!(name: "Dr. #{Faker::FunnyName.three_word_name}",
     bio: BIOS[i],
     specialty: SPECIALTIES.sample,
     remote_photo_url: NUTRITIONISTS_PHOTOS[i]
+  )
+end
+
+1.times do |i|
+  Nutritionist.create!(name: "Dr. Rosan Meyer",
+    bio: BIOSS[i],
+    specialty: "Pediatric",
+    remote_photo_url: NUTRITIONIST_PHOTO[i]
   )
 end
 
@@ -191,7 +199,7 @@ for i in 0...10
   end
 end
 
-sleep(3)
+sleep(5)
 #1st nutritionist lunch
 puts "creating lunch..."
 response = Faraday.get request_url + "wrap"
@@ -221,7 +229,7 @@ for i in 0...3
   end
 end
 
-sleep(3)
+sleep(5)
 
 #other nutritionists lunch
 response = Faraday.get request_url + "pesto"
@@ -251,7 +259,7 @@ for i in 0...10
   end
 end
 
-sleep(3)
+sleep(5)
 
 #first nutritionist dinner
 
@@ -283,13 +291,42 @@ for i in 0...3
   end
 end
 
-sleep(3)
+sleep(5)
 
 #other nutritionists dinner
 response = Faraday.get request_url + "greens"
 recipes = JSON.parse(response.body)["hits"]
 
-for i in 0...10
+for i in 0...4
+  recipe = recipes[i]["recipe"]
+
+  meal = Meal.create!(
+    name: recipe["label"],
+    nutritionist: Nutritionist.last.sample,
+    type: "dinner",
+    calories: recipe["calories"].floor,
+    time: rand(20...90).round(-1),
+    remote_photo_url: recipe["image"],
+    fat: recipe["totalNutrients"]["FAT"]["quantity"].floor,
+    carbs: recipe["totalNutrients"]["CHOCDF"]["quantity"].floor,
+    protein: recipe["totalNutrients"]["PROCNT"]["quantity"].floor,
+    healthLabels: recipe["healthLabels"],
+    yield: recipe["yield"]
+  )
+  recipe["ingredients"].each do |ingredient|
+    Ingredient.create!(
+      meal: meal,
+      name: ingredient["text"]
+    )
+  end
+end
+
+sleep(5)
+
+response = Faraday.get request_url + "leafy"
+recipes = JSON.parse(response.body)["hits"]
+
+for i in 0...6
   recipe = recipes[i]["recipe"]
 
   meal = Meal.create!(
@@ -313,7 +350,7 @@ for i in 0...10
   end
 end
 
-sleep(3)
+sleep(5)
 
 puts "creating snacks..."
 response = Faraday.get request_url + "crunch"
@@ -343,50 +380,51 @@ for i in 0...5
   end
 end
 
-puts "creating meal plans ;)"
+puts "Not creating meal plans :("
+puts "complete :)"
 
-celine_meal_plan = MealPlan.create!(user: User.first, name: "Yoga Day")
-3.times do |i|
-  MealPlanMeal.create!(meal: Meal.all.sample, meal_plan: celine_meal_plan)
-end
+# celine_meal_plan = MealPlan.create!(user: User.first, name: "Yoga Day")
+# 3.times do |i|
+#   MealPlanMeal.create!(meal: Meal.all.sample, meal_plan: celine_meal_plan)
+# end
 
-  celine_meal_plan = MealPlan.create!(user: User.first, name: "Workout Day")
-3.times do |i|
-  MealPlanMeal.create!(meal: Meal.all.sample, meal_plan: celine_meal_plan)
-end
+#   celine_meal_plan = MealPlan.create!(user: User.first, name: "Workout Day")
+# 3.times do |i|
+#   MealPlanMeal.create!(meal: Meal.all.sample, meal_plan: celine_meal_plan)
+# end
 
-  celine_meal_plan = MealPlan.create!(user: User.first, name: "Rest Day")
-3.times do |i|
-  MealPlanMeal.create!(meal: Meal.all.sample, meal_plan: celine_meal_plan)
-end
+#   celine_meal_plan = MealPlan.create!(user: User.first, name: "Rest Day")
+# 3.times do |i|
+#   MealPlanMeal.create!(meal: Meal.all.sample, meal_plan: celine_meal_plan)
+# end
 
-Subscription.create!(user: User.first, nutritionist: Nutritionist.first)
-Subscription.create!(user: User.first, nutritionist: Nutritionist.second)
-Subscription.create!(user: User.first, nutritionist: Nutritionist.third)
+# Subscription.create!(user: User.first, nutritionist: Nutritionist.first)
+# Subscription.create!(user: User.first, nutritionist: Nutritionist.second)
+# Subscription.create!(user: User.first, nutritionist: Nutritionist.third)
 
-Subscription.create!(user: User.second, nutritionist: Nutritionist.first)
-Subscription.create!(user: User.second, nutritionist: Nutritionist.second)
-Subscription.create!(user: User.second, nutritionist: Nutritionist.third)
+# Subscription.create!(user: User.second, nutritionist: Nutritionist.first)
+# Subscription.create!(user: User.second, nutritionist: Nutritionist.second)
+# Subscription.create!(user: User.second, nutritionist: Nutritionist.third)
 
-Subscription.create!(user: User.third, nutritionist: Nutritionist.first)
-Subscription.create!(user: User.third, nutritionist: Nutritionist.second)
-Subscription.create!(user: User.third, nutritionist: Nutritionist.third)
+# Subscription.create!(user: User.third, nutritionist: Nutritionist.first)
+# Subscription.create!(user: User.third, nutritionist: Nutritionist.second)
+# Subscription.create!(user: User.third, nutritionist: Nutritionist.third)
 
-Meal.create!(
-  nutritionist: Nutritionist.second,
-  prep_time: (rand * 10).round,
-  calories: 850,
-  yield: 2,
-  name: "test meal",
-  type: "Dinner",
-  remote_photo_url: "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fb2e66d3d3bf1c413f143e9a723c5309&auto=format&fit=crop&w=668&q=80",
-)
-Meal.create!(
-  nutritionist: Nutritionist.third,
-  prep_time: (rand * 10).round,
-  calories: 600,
-  yield: 4,
-  name: "test meal",
-  type: "Lunch",
-  remote_photo_url: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=67fb2e7b1fbe39b18b51146234ef38aa&auto=format&fit=crop&w=1500&q=80",
-)
+# Meal.create!(
+#   nutritionist: Nutritionist.second,
+#   prep_time: (rand * 10).round,
+#   calories: 850,
+#   yield: 2,
+#   name: "test meal",
+#   type: "Dinner",
+#   remote_photo_url: "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fb2e66d3d3bf1c413f143e9a723c5309&auto=format&fit=crop&w=668&q=80",
+# )
+# Meal.create!(
+#   nutritionist: Nutritionist.third,
+#   prep_time: (rand * 10).round,
+#   calories: 600,
+#   yield: 4,
+#   name: "test meal",
+#   type: "Lunch",
+#   remote_photo_url: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=67fb2e7b1fbe39b18b51146234ef38aa&auto=format&fit=crop&w=1500&q=80",
+# )

@@ -12,11 +12,11 @@
       </h6>
     </div>
     <% if current_user.nutritionists.include?(@nutritionist) %>
-      <div class="followed">
+      <div class="Following">
         followed
       </div>
     <% else %>
-      <%= link_to 'Follow', subscriptions_path(nutritionist_id: @nutritionist), method: :post, remote: 'true', class: "follow" %>
+      <%= link_to 'Follow', subscriptions_path(nutritionist_id: @nutritionist.id), method: :post, class: "follow" %>
     <% end %>
   </div>
   <div class="row">

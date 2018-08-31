@@ -3,6 +3,7 @@
   text-align: center;
   height: calc(100vh - 400px);
   background-size: cover !important;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,4 +20,28 @@
   color: rgb(255, 255, 255);
   opacity: 0.6;
   margin-bottom: 30px;
+  position: relative;
+}
+
+.banner-content {
+ display: flex;
+ justify-content: left;
+ text-align: left;
+};
+
+.banner-content-taglines {
+ position: absolute;
+ left: 30px;
+ top: 200px;
+ display: flex;
+ flex-direction: column;
+ align-items: left;
+ justify-content:left;
+}
+
+.nutri {
+  position: absolute;
+  top: 100px;
+  left:150px;
+
 }

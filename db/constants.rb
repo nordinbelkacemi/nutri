@@ -8,7 +8,7 @@ SNACKS = [
 
 BIO = [
   "Dr. House received a PhD in Child Nutrition from Harvard University in 2008. He received clinical and research training at the Montreal Children's Hospital.
-  He is also a professor in the Department of Nutrition at McGill University. In his free time Greg loves to cook, play with lego and travel the world.
+  He is also a professor in the Department of Nutrition at McGill University. In his free time Greg loves to cook, play with lego and travel the world."
   ]
 
 BIOS = [
@@ -19,6 +19,12 @@ BIOS = [
   "Amateur coffee guru. Alcohol trailblazer. Typical pop culture ninja. Foodaholic. Music fan. Total web geek. Twitter buff. Internet nerd.",
   "Food trailblazer. Troublemaker. Zombie scholar. Devoted analyst. Twitter buff. General alcohol guru. Evil coffee lover.",
   "Unapologetic tv aficionado. Extreme beer fan. Hipster-friendly twitter evangelist. Total writer."
+]
+
+BIOSS = [
+"Dr Meyer is a state registered paediatric dietitian who practices in London, United Kingdom.
+She has specialised in paediatric nutrition and has a particularly interested in food allergies and intolerances, nutritional support, growth faltering, medical/feeding complications and poor feeding.
+Rosan works in in many paediatric nutrition related fields."
 ]
 
 NUTRITIONIST_PHOTO = [
@@ -39,7 +45,7 @@ SPECIALTIES = [
   "Sports",
   "General",
   "Pediatric",
-  "Maternal health"
+  "Maternal Health"
 ]
 
 MEAL_PHOTOS = [

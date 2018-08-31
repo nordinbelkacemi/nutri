@@ -46,7 +46,7 @@
 }
 
 .meals-description {
-  margin: 5% 5%;
+  padding-left: 40px;
   font-weight: 300;
 }
 
@@ -75,6 +75,7 @@
 }
 
 .meal-recipe {
+  padding-top: 20px;
   font-weight: 300;
   padding-left: 40px;
   width: 100%;
@@ -195,6 +196,9 @@
 .header-wrapper{
   display: flex;
   width: 100%;
+  @media (max-width: 800px) {
+    flex-wrap: wrap;
+  }
 }
 
 .avatar-wrapper{
@@ -211,6 +215,7 @@
 
 }
 .nutri-details{
+  padding-left: 40px;
   h1{
     font-weight: 300;
     font-size: 35px;
@@ -226,17 +231,26 @@
 }
 
 .ingredients {
+  margin-bottom: 10px;
   font-weight: 300;
   font-size: 16px;
   width: 100%;
 }
 
 .title-meal-show {
-  padding-top: 20px;
   width: 100%;
   text-align: left;
   font-size: 20px;
   text-transform: uppercase;
   color: rgba(248, 36, 98, 1);
   font-weight: 400;
+}
+
+.grey {
+  padding: 8px;
+}
+
+.other-meals {
+  padding-top: 20px;
+  padding-left: 40px;
 }

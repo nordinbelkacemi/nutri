@@ -11,7 +11,7 @@
         <p><%= @nutritionist.bio %></p>
       </h6>
     </div>
-    <% if current_user.nutritionists.include?(@nutritionist) %>
+    <% if current_user && current_user.nutritionists.include?(@nutritionist) %>
       <div class="followed">
         Following
       </div>

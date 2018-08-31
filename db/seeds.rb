@@ -289,6 +289,35 @@ sleep(3)
 response = Faraday.get request_url + "greens"
 recipes = JSON.parse(response.body)["hits"]
 
+for i in 0...5
+  recipe = recipes[i]["recipe"]
+
+  meal = Meal.create!(
+    name: recipe["label"],
+    nutritionist: Nutritionist.last.sample,
+    type: "dinner",
+    calories: recipe["calories"].floor,
+    time: rand(20...90).round(-1),
+    remote_photo_url: recipe["image"],
+    fat: recipe["totalNutrients"]["FAT"]["quantity"].floor,
+    carbs: recipe["totalNutrients"]["CHOCDF"]["quantity"].floor,
+    protein: recipe["totalNutrients"]["PROCNT"]["quantity"].floor,
+    healthLabels: recipe["healthLabels"],
+    yield: recipe["yield"]
+  )
+  recipe["ingredients"].each do |ingredient|
+    Ingredient.create!(
+      meal: meal,
+      name: ingredient["text"]
+    )
+  end
+end
+
+sleep(3)
+
+response = Faraday.get request_url + "leafy"
+recipes = JSON.parse(response.body)["hits"]
+
 for i in 0...10
   recipe = recipes[i]["recipe"]
 

@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "apple.svg", height: 50 %>
+    <%= image_tag "strawberry.svg", height: 50 %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -10,8 +10,14 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Meal Plans", meal_plans_path, class: "link-navbar" %>
-      <%= link_to "New Meal Plan", new_meal_plan_path, class: "link-navbar" %>
+      <div class="nav-btn-plans">
+        <%= image_tag "meal.svg" %>
+        <%= link_to "Meal Plans", meal_plans_path, class: "link-navbar" %>
+      </div>
+      <div class="nav-btn-plans">
+        <%= image_tag "menu.svg" %>
+        <%= link_to "New Meal Plan", new_meal_plan_path, class: "link-navbar" %>
+      </div>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">

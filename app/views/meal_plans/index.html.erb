@@ -1,47 +1,47 @@
 <div class="container">
   <%= link_to "New Meal Plan", new_meal_plan_path, class: "follow-clone" %>
   <div id="meal-carousel">
-    <% @meal_plans.each do |meal_plan| %>
-      <div class="meal-plan">
-        <div class="meal-plan-card">
-          <div class="frame">
-            <%= link_to meal_plan_path(meal_plan.id), method: :delete do %>
-              <i class="far fa-times-circle" id="close-button"></i>
-            <% end %>
-            <div class="meal-plan-name">
-              <%= meal_plan.name %>
-            </div>
-            <% meal_plan.meals.each do |meal| %>
-            <div class="meal-card no-grow">
-              <div class="mask" style="background-image: url('<%= cl_image_path meal.photo %>');">
-                <div class="<%= meal.type.downcase %> meal-type">
-                  <%= meal.type %>
-                </div>
+    <% @meal_plans.reverse.each do |meal_plan| %>
+        <div class="meal-plan">
+          <div class="meal-plan-card">
+            <div class="frame">
+              <%= link_to meal_plan_path(meal_plan.id), method: :delete do %>
+                <i class="fas fa-times"></i>
+              <% end %>
+              <div class="meal-plan-name">
+                <%= link_to meal_plan.name, meal_plan_path(meal_plan), class: "link-to-meal-plan" %>
               </div>
-              <div class="meal-card-labels">
-                <div class="meal-card-calories">
-                  <i class="far fa-clock"></i>
+              <% meal_plan.meals.each do |meal| %>
+                <div class="meal-card no-grow">
+                  <div class="mask" style="background-image: url('<%= cl_image_path meal.photo %>');">
+                    <div class="<%= meal.type.downcase %> meal-type">
+                      <%= meal.type %>
+                    </div>
+                  </div>
+                  <div class="meal-card-labels">
+                    <div class="meal-card-calories">
+                      <i class="far fa-clock"></i>
 
-                  <p><%= "#{meal.calories} cal"%></p>
-                </div>
-                <div class="meal-card-calories">
-                  <i class="fas fa-fire"></i>
-                  <p><%= "#{meal.calories} cal"%></p>
-                </div>
-                <div class="meal-card-calories">
-                  <i class="fas fa-utensils"></i>
-                  <p><%= meal.yield %></p>
-                </div>
-              </div>
+                      <p><%= "#{meal.calories} cal"%></p>
+                    </div>
+                    <div class="meal-card-calories">
+                      <i class="fas fa-fire"></i>
+                      <p><%= "#{meal.calories} cal"%></p>
+                    </div>
+                    <div class="meal-card-calories">
+                      <i class="fas fa-utensils"></i>
+                      <p><%= meal.yield %></p>
+                    </div>
+                  </div>
 
-              <div class="meal-card-name">
-                <%= truncate(meal.name, length: 40, separator: ' ') %>
-              </div>
+                  <div class="meal-card-name">
+                    <%= truncate(meal.name, length: 40, separator: ' ') %>
+                  </div>
+                </div>
+              <% end %>
             </div>
-            <% end %>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
   </div>
 </div>

@@ -4,7 +4,7 @@ class CreateMealPlans < ActiveRecord::Migration[5.2]
       t.string :name
       t.integer :daily_calories
       t.references  :user, foreign_key: true
-      
+
       t.timestamps
     end
   end

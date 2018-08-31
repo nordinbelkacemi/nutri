@@ -85,10 +85,24 @@
   font-family: $medium-font;
   font-weight: 400;
   font-size: 18px;
-  color: rgba(0,0,0,0.4);
+  color: rgba(248, 36, 98, 1);
+  padding-top: 5px;
 }
 
 .link-navbar:hover {
   text-decoration: none;
-  color: rgba(0,0,0,0.8);
+  color: rgba(248, 36, 98, 0.6);
+}
+
+.nav-btn-plans {
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  img {
+    height: 25px;
+  }
+  a {
+    font-size: 14px;
+    text-transform: uppercase;
+  }
 }

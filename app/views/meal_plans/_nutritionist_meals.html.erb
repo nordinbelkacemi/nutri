@@ -4,7 +4,7 @@
   <% else %>
     <% nutritionist.meals.each do |meal| %>
     <div class="col-xs-12 col-sm-4 col-md-4">
-      <div class="nutritionist-meal-card" data-meal-id="<%= meal.id %>" data-meal-name="<%= truncate(meal.name, length: 18, separator: ' ') %>" data-meal-calories="<%= meal.calories %>">
+      <div class="nutritionist-meal-card" data-meal-id="<%= meal.id %>" data-meal-name="<%= truncate(meal.name, length: 30, separator: ' ') %>" data-meal-calories="<%= meal.calories %>">
         <span data-pic-url="<%= cl_image_path meal.photo %>"></span>
         <div class="mask" style="background-image: url('<%= cl_image_path meal.photo %>');">
         <div class="<%= meal.type.downcase %> meal-type">
@@ -27,7 +27,7 @@
         </div>
 
         <div class="meal-card-name">
-          <%= truncate(meal.name, length: 40, separator: ' ') %>
+          <%= link_to truncate(meal.name, length: 40, separator: ' '), nutritionist_meal_path(meal.nutritionist, meal), class: "meal-details" %>
         </div>
       </div>
     </div>

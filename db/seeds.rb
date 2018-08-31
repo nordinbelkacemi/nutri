@@ -45,7 +45,7 @@ end
   Nutritionist.create!(name: "Dr. Rosan Meyer",
     bio: BIOSS[i],
     specialty: "Pediatric",
-    remote_photo_url: NUTRITIONIST_PHOTO[i]
+    remote_photo_url: NUTRITIONISTSS_PHOTO[i]
   )
 end
 
@@ -302,7 +302,7 @@ for i in 0...4
 
   meal = Meal.create!(
     name: recipe["label"],
-    nutritionist: Nutritionist.last.sample,
+    nutritionist: Nutritionist.last,
     type: "dinner",
     calories: recipe["calories"].floor,
     time: rand(20...90).round(-1),
@@ -326,7 +326,7 @@ sleep(5)
 response = Faraday.get request_url + "leafy"
 recipes = JSON.parse(response.body)["hits"]
 
-for i in 0...6
+for i in 0...5
   recipe = recipes[i]["recipe"]
 
   meal = Meal.create!(
@@ -352,33 +352,33 @@ end
 
 sleep(5)
 
-puts "creating snacks..."
-response = Faraday.get request_url + "crunch"
-recipes = JSON.parse(response.body)["hits"]
+# puts "creating snacks..."
+# response = Faraday.get request_url + "crunch"
+# recipes = JSON.parse(response.body)["hits"]
 
-for i in 0...5
-  recipe = recipes[i]["recipe"]
+# for i in 0...5
+#   recipe = recipes[i]["recipe"]
 
-  meal = Meal.create!(
-    name: recipe["label"],
-    nutritionist: Nutritionist.first,
-    type: "snack",
-    calories: recipe["calories"].floor,
-    time: rand(20...90).round(-1),
-    remote_photo_url: recipe["image"],
-    fat: recipe["totalNutrients"]["FAT"]["quantity"].floor,
-    carbs: recipe["totalNutrients"]["CHOCDF"]["quantity"].floor,
-    protein: recipe["totalNutrients"]["PROCNT"]["quantity"].floor,
-    healthLabels: recipe["healthLabels"],
-    yield: recipe["yield"]
-  )
-  recipe["ingredients"].each do |ingredient|
-    Ingredient.create!(
-      meal: meal,
-      name: ingredient["text"]
-    )
-  end
-end
+#   meal = Meal.create!(
+#     name: recipe["label"],
+#     nutritionist: Nutritionist.first,
+#     type: "snack",
+#     calories: recipe["calories"].floor,
+#     time: rand(20...90).round(-1),
+#     remote_photo_url: recipe["image"],
+#     fat: recipe["totalNutrients"]["FAT"]["quantity"].floor,
+#     carbs: recipe["totalNutrients"]["CHOCDF"]["quantity"].floor,
+#     protein: recipe["totalNutrients"]["PROCNT"]["quantity"].floor,
+#     healthLabels: recipe["healthLabels"],
+#     yield: recipe["yield"]
+#   )
+#   recipe["ingredients"].each do |ingredient|
+#     Ingredient.create!(
+#       meal: meal,
+#       name: ingredient["text"]
+#     )
+#   end
+# end
 
 puts "Not creating meal plans :("
 puts "complete :)"

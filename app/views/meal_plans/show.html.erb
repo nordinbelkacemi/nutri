@@ -1,33 +1,37 @@
-<div class="container text-center">
-  <div class="margin-top-5 margin-bottom-5">
-    <div class="meal-plan-show-container">
+<div class="meal-plan">
+  <div class="meal-plan-card">
+    <div class="frame">
       <div class="meal-plan-name">
         <%= @meal_plan.name %>
       </div>
       <% @meal_plan.meals.each do |meal| %>
-        <div class="meal-card margin-top-5 margin-bottom-5">
+        <div class="meal-card no-grow">
           <div class="mask" style="background-image: url('<%= cl_image_path meal.photo %>');">
-          </div>
-          <div class="meal-card-bottom">
-          <div class="meal-card-bottom-text">
             <div class="<%= meal.type.downcase %> meal-type">
               <%= meal.type %>
             </div>
+          </div>
+          <div class="meal-card-labels">
             <div class="meal-card-calories">
-              <%= "#{meal.calories} cal"%>
+              <i class="far fa-clock"></i>
+
+              <p><%= "#{meal.calories} cal"%></p>
+            </div>
+            <div class="meal-card-calories">
+              <i class="fas fa-fire"></i>
+              <p><%= "#{meal.calories} cal"%></p>
+            </div>
+            <div class="meal-card-calories">
+              <i class="fas fa-utensils"></i>
+              <p><%= meal.yield %></p>
             </div>
           </div>
 
           <div class="meal-card-name">
-            <%= truncate(meal.name, length: 70, separator: ' ') %>
+            <%= truncate(meal.name, length: 40, separator: ' ') %>
           </div>
-        </div>
         </div>
       <% end %>
     </div>
-    <div class="ingredients-button" >
-      <%= "#{@calories.inject(0, :+)} cal" %>
-    </div>
   </div>
-  <div class="btn btn-primary">View ingredients</div>
 </div>

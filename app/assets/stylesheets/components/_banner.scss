@@ -1,5 +1,4 @@
 .banner {
-  color: white;
   text-align: center;
   height: calc(100vh - 400px);
   background-size: cover !important;
@@ -13,11 +12,12 @@
   font-size: 50px;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  color: #F30050;
 }
 .banner p {
   font-size: 25px;
   font-weight: lighter;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   opacity: 0.6;
   margin-bottom: 30px;
   position: relative;

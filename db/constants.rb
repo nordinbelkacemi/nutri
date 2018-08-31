@@ -35,10 +35,13 @@ NUTRITIONISTS_PHOTOS = [
   "https://s3.amazonaws.com/nutri-photos/2.jpg",
   "https://s3.amazonaws.com/nutri-photos/3.jpg",
   "https://s3.amazonaws.com/nutri-photos/4.jpg",
-  "https://s3.amazonaws.com/nutri-photos/5.jpg",
   "https://s3.amazonaws.com/nutri-photos/6.jpg",
   "https://s3.amazonaws.com/nutri-photos/7.jpg",
   "https://s3.amazonaws.com/nutri-photos/8.jpg"
+]
+
+NUTRITIONISTSS_PHOTO = [
+ "https://s3.amazonaws.com/nutri-photos/5.jpg"
 ]
 
 SPECIALTIES = [

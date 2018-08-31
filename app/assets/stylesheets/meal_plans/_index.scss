@@ -15,6 +15,7 @@
 }
 
 .meal-plan-name {
+  position: relative;
   text-align: center;
   font-weight: 500;
   margin-top: 20px;
@@ -52,4 +53,31 @@
 
 .no-grow {
   pointer-events: none;
+}
+
+.link-to-meal-plan {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgba(0,0,0,0.5);
+  &:hover {
+    color: rgba(0,0,0,1);
+  }
+}
+
+.fa-times {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: rgba(81, 124, 232, 0.6);
+  opacity: 0;
+
+  &:hover {
+    color: rgba(81, 124, 232, 1);
+  }
+}
+
+.frame:hover {
+  .fa-times {
+    opacity: 1;
+  }
 }

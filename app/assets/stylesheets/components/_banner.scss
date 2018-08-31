@@ -1,15 +1,15 @@
 .banner {
   text-align: center;
-  height: calc(100vh - 400px);
+  height: calc(100vh - 220px);
   background-size: cover !important;
   background-position: center;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100vw;
 }
 .banner h1 {
-  font-size: 50px;
+  font-size: 80px;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
   color: #F30050;
@@ -19,29 +19,13 @@
   font-weight: lighter;
   color: rgb(0, 0, 0);
   opacity: 0.6;
-  margin-bottom: 30px;
-  position: relative;
 }
 
 .banner-content {
- display: flex;
- justify-content: left;
- text-align: left;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: flex-start; */
+    /* width: 100%; */
+    text-align: left;
+    margin-left: 100px;
 };
-
-.banner-content-taglines {
- position: absolute;
- left: 30px;
- top: 200px;
- display: flex;
- flex-direction: column;
- align-items: left;
- justify-content:left;
-}
-
-.nutri {
-  position: absolute;
-  top: 100px;
-  left:150px;
-
-}

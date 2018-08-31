@@ -297,7 +297,7 @@ sleep(5)
 response = Faraday.get request_url + "greens"
 recipes = JSON.parse(response.body)["hits"]
 
-for i in 0...5
+for i in 0...4
   recipe = recipes[i]["recipe"]
 
   meal = Meal.create!(
@@ -326,7 +326,7 @@ sleep(5)
 response = Faraday.get request_url + "leafy"
 recipes = JSON.parse(response.body)["hits"]
 
-for i in 0...10
+for i in 0...6
   recipe = recipes[i]["recipe"]
 
   meal = Meal.create!(

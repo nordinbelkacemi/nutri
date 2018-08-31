@@ -180,7 +180,7 @@ for i in 0...10
     nutritionist: Nutritionist.all.sample,
     type: "breakfast",
     calories: recipe["calories"].floor,
-    time: rand(20...90).round(-1),
+    time: rand(10...40).round(-1),
     remote_photo_url: recipe["image"],
     recipe: "Stir together tuna, mayonnaise, green onions, red pepper, and balsamic vinegar in a bowl. Season with pepper and garlic salt, then pack the avocado halves with the tuna mixture. Garnish with reserved green onions and a dash of black pepper before serving.",
     fat: recipe["totalNutrients"]["FAT"]["quantity"].floor,

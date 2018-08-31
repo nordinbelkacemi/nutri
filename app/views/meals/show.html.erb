@@ -45,7 +45,7 @@
       </div>
       <div class="meal-recipe">
         <h4 class="title-meal-show">Recipe</h4>
-        <p><%= @meal.recipe %></p>
+        <p><%= @meal.recipe.html_safe %></p>
       </div>
       <p class="title-meal-show other-meals">Other recipes you may like</p>
       <div class="row">

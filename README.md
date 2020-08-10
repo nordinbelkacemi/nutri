@@ -1,1 +1,1 @@
-Hosted at: http://www.nutri.host/
+Hosted at: https://nutri-app.herokuapp.com
